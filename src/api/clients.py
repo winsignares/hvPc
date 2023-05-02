@@ -28,7 +28,7 @@ def eliminar(id):
 @app.route('/actualizar_clients', methods=['POST'])
 def actualizar():
     id= request.json['id']
-    datos= request.json['full_name','telefono','direccion','email','password']
+    datos= request.json['full_name','telefono','direccion']
     clientes= clients.query.get(id)
     clientes.datos= datos
     db.session.commit()
@@ -36,7 +36,7 @@ def actualizar():
 
 @app.route('/guardar_clients',methods= ['POST'])
 def guardar():
-    addclient= request.json['full_name','telefono','direccion','email','password']
+    addclient= request.json['full_name','telefono','direccion']
     print(addclient)
     new_client= clients(addclient)
     db.session.add(new_client)
