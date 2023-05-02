@@ -1,7 +1,7 @@
 from config.db import db, app, ma 
 
 class clients(db.Model):
-    __tableame__= "tbl_clients"
+    __tablename__= "tbl_clients"
     
     
     id= db.Column(db.Integer, primary_key= True)

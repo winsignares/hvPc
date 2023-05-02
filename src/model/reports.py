@@ -1,12 +1,12 @@
 from config.db import db, app, ma 
 
 class report(db.Model):
-    __tableame__= "tbl_reports"
+    __tablename__= "tbl_reports"
     
     
     id= db.Column(db.Integer, primary_key= True)
-    id_cliente= db.Column(db.Integer, db.Foreignkey("tbl_clients.id"))
-    id_pc= db.Column(db.Integer, db.Foreignkey("tbl_pcs.id"))
+    id_cliente= db.Column(db.Integer,db.Foreignkey("tbl_clients.id"))
+    id_pc= db.Column(db.Integer,db.Foreignkey("tbl_pcs.id"))
     programas_install= db.Column(db.String(200))
     observaciones= db.Column(db.String(200))
     estado= db.Column(db.String(200))
