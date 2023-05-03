@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V3</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===================================css============================================-->	
-	<link rel="icon"  href="{{url_for('static', filename='assets/images/icons/favicon.ico')}}">
+	<link rel="icon" href="{{url_for('static', filename='assets/images/icons/favicon.ico')}}">
 <!--===============================================================================================-->
     <link rel="stylesheet" href="{{url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" href="{{url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" href="{{url_for('static', filename='fonts/iconic/css/material-design-iconic-font.min.css')}}">
+	<link rel="stylesheet" href="{{url_for('static', filename='assets/fonts/iconic/css/material-design-iconic-font.min.css')}}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="{{url_for('static', filename='vendor/animate/animate.css')}}">
 <!--===============================================================================================-->	
@@ -25,11 +25,13 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
 <!--===============================================================================================-->
+<link rel="stylesheet" href="{{url_for('static', filename='css/util.css')}}">
+
 </head>
 <body>
 {% block body%}
 {% endblock %}
-<!--===============================================================================================-->
+<!--============================================js===================================================-->
 <script src="{{url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 <!--===============================================================================================-->
 <script src="{{url_for('static', filename='vendor/animsition/js/animsition.min.js')}}"></script>

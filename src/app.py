@@ -7,7 +7,7 @@ from api.pcs import routes_pcs
 from api.reports import route_reports
 from api.admin import routes_admin
 #rutas de los htmls
-
+from rutas.registro import routes_register
 
 
 
@@ -19,7 +19,7 @@ app.register_blueprint(route_reports, url_prefix="/api")
 app.register_blueprint(routes_admin, url_prefix="/api")
 
 #ubicacion de la ruta
-
+app.register_blueprint(routes_register, url_prefix="/fronted")
 
 
 @app.route("/")
