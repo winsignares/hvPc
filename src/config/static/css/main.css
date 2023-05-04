@@ -155,6 +155,7 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
+
 }
 
 .container-login100 {
@@ -170,6 +171,7 @@ iframe {
   align-items: center;
   padding: 15px;
 
+  background-image: url("../assets/images/ola.gif");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

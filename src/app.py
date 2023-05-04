@@ -8,7 +8,7 @@ from api.reports import route_reports
 from api.admin import routes_admin
 #rutas de los htmls
 from rutas.registro import routes_register
-
+from rutas.login import routes_login
 
 
 
@@ -20,7 +20,7 @@ app.register_blueprint(routes_admin, url_prefix="/api")
 
 #ubicacion de la ruta
 app.register_blueprint(routes_register, url_prefix="/fronted")
-
+app.register_blueprint(routes_login, url_prefix="/fronted")
 
 @app.route("/")
 def index():
