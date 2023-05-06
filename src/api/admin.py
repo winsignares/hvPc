@@ -21,14 +21,14 @@ def mostrar_admin():
 @app.route('/eliminar_admins/<id>', methods=['GET'])
 def eliminar_admin(id):
     admins= admin.query.get(id)
-    db.session.delete(admin)
+    db.session.delete(admins)
     db.session.commit()
     return jsonify(adminSchema.dump(admins))
 
 @app.route('/actualizar_clients', methods=['POST'])
 def actualizar_admin():
     id= request.json['id']
-    datos= request.json['full_name','telefono','direccion','email','password']
+    datos= request.json['full_name','telefono','direccion','email','password','id_genero']
     admins= admin.query.get(id)
     admins.datos= datos
     db.session.commit()
@@ -36,7 +36,7 @@ def actualizar_admin():
 
 @app.route('/guardar_admins',methods= ['POST'])
 def guardar_admin():
-    addadmin= request.json['full_name','telefono','direccion','email','password']
+    addadmin= request.json['full_name','telefono','direccion','email','password','id_genero']
     print(addadmin)
     new_admin= admin(addadmin)
     db.session.add(new_admin)
