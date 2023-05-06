@@ -8,7 +8,8 @@ class admin(db.Model):
     telefono= db.Column(db.Integer)
     email= db.Column(db.String(200))
     password= db.Column(db.String(200))
-    id_genero= db.Column(db.Integer, db.ForeignKey("tbl_generos"))
+    id_genero= db.Column(db.Integer, db.ForeignKey('tbl_generos.id'))
+   
     
     def __init__(self,full_name,telefono,direccion,email,password,id_genero):
         self.full_name= full_name

@@ -2,11 +2,14 @@ from flask import Flask,  redirect, request, jsonify, json, session, render_temp
 from config.db import db, app, ma
 
 #rutas de las tablas 
+from api.genero import routes_genero
 from api.clients import routes_clients
+from api.admin import routes_admin
 from api.pcs import routes_pcs
 from api.reports import route_reports
-from api.admin import routes_admin
-from api.genero import routes_genero
+
+
+
 #rutas de los htmls
 from rutas.registro import routes_register
 from rutas.login import routes_login

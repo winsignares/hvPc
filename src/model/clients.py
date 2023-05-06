@@ -9,7 +9,8 @@ class clients(db.Model):
     tipo_document= db.Column(db.String(200))
     telefono= db.Column(db.Integer)
     direccion= db.Column(db.String(200))
-    id_genero= db.Column(db.Integer, db.ForeignKey("tbl_generos"))
+    id_genero= db.Column(db.Integer, db.ForeignKey('tbl_generos.id'))
+   
     
     def __init__(self,full_name,tipo_document,telefono,direccion, id_genero):
         self.full_name= full_name
