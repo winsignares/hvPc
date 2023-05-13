@@ -13,6 +13,7 @@ from api.reports import route_reports
 #rutas de los htmls
 from rutas.registro import routes_register
 from rutas.login import routes_login
+from rutas.home import routes_home
 
 
 
@@ -26,6 +27,7 @@ app.register_blueprint(routes_genero, url_prefix="/api")
 #ubicacion de la ruta
 app.register_blueprint(routes_register, url_prefix="/fronted")
 app.register_blueprint(routes_login, url_prefix="/fronted")
+app.register_blueprint(routes_home, url_prefix="/fronted")
 
 @app.route("/")
 def index():
