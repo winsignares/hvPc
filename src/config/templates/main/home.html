@@ -1,0 +1,309 @@
+{% extends './layout.html' %}
+{% block body%}
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a href="#" class="navbar-brand"
+        ><span class="text-primary">CvPc</span>xd</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarS"
+        aria-controls="navbarS"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarS">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">crear</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">contactos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">servicios</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div id="carouselE" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselE"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselE"
+        data-bs-slide-to="1"
+        aria-current="true"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselE"
+        data-bs-slide-to="2"
+        aria-current="true"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{url_for('static', filename='assets/images/h.png')}}" class="d-block w-100" alt="" />
+        <div class="carousel-caption">
+          <h5>crea tu cv de pc</h5>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
+            facilis excepturi iure optio necessitatibus maxime aut accusantium
+            impedit, ex quia magni recusandae unde eaque. Culpa, quia debitis.
+            Praesentium, debitis eum.
+          </p>
+          <a href="#" class="btn btn-primary mt-3">ver mas</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='assets/images/new.jpg')}}" class="d-block w-100" alt="" />
+        <div class="carousel-caption">
+          <h5>crea tu cv de pc</h5>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
+            facilis excepturi iure optio necessitatibus maxime aut accusantium
+            impedit, ex quia magni recusandae unde eaque. Culpa, quia debitis.
+            Praesentium, debitis eum.
+          </p>
+          <a href="#" class="btn btn-primary mt-3">ver mas</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename='assets/images/tr.jpg')}}" class="d-block w-100" alt="" />
+        <div class="carousel-caption">
+          <h5>crea tu cv de pc</h5>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id
+            facilis excepturi iure optio necessitatibus maxime aut accusantium
+            impedit, ex quia magni recusandae unde eaque. Culpa, quia debitis.
+            Praesentium, debitis eum.
+          </p>
+          <a href="#" class="btn btn-primary mt-3">ver mas</a>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselE"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">previous</span>
+      </button>
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselE"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <section class="about section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 col-12">
+          <div class="about-img">
+            <img src="{{url_for('static', filename='assets/images/bg-01.jpg')}}" class="img-fluid" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+          <div class="about-text text-white">
+            <h2>informacion <br />servicios</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Dolore, officia voluptatem! Natus error ad officia minima fugit
+              in nihil et voluptas officiis. Natus culpa quidem nam odit modi
+              expedita earum.
+            </p>
+            <a href="#" class="btn btn-primary">mas informacion</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-header text-center text-white pb-5">
+            <h2>nuestros servicios</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+              consequatur optio laborum voluptas nobis in consectetur
+              repudiandae vel quisquam minima,<br />
+              Natus maiores necessitatibus qui quasi consequatur dolores sunt
+              nihil optio.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card text-white text-center bg-dark pb-2">
+            <div class="card-body">
+              <i class="bi bi-laptop"></i>
+              <h3 class="card-title">registro</h3>
+              <p class="lead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+                a at sed. Vel quam ut deleniti quos, culpa in accusantium ab,
+                explicabo iusto dignissimos non obcaecati provident odit!
+                Officiis, adipisci.
+              </p>
+              <button class="btn bg-danger text-white">
+                mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card text-white text-center bg-dark pb-2">
+            <div class="card-body">
+              <i class="bi bi-wifi"></i>
+              <h3 class="card-title">internet</h3>
+              <p class="lead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+                a at sed. Vel quam ut deleniti quos, culpa in accusantium ab,
+                explicabo iusto dignissimos non obcaecati provident odit!
+                Officiis, adipisci.
+              </p>
+              <button class="btn bg-danger text-white">
+                mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card text-white text-center bg-dark pb-2">
+            <div class="card-body">
+              <i class="bi bi-people"></i>
+              <h3 class="card-title">grupo</h3>
+              <p class="lead">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo
+                a at sed. Vel quam ut deleniti quos, culpa in accusantium ab,
+                explicabo iusto dignissimos non obcaecati provident odit!
+                Officiis, adipisci.
+              </p>
+              <button class="btn bg-danger text-white">
+                mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="portafolio-padding">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sectio-header text-center text-white pb-5">
+          <h2>holaaaaa</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Repellendus assumenda consectetur obcaecati ullam totam repellat
+            quae maiores, animi ipsum necessitatibus enim nam,<br />
+            voluptate doloribus omnis cumque reiciendis accusamus excepturi
+            expedita.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-12 col-lg-4 pb-5">
+        <div class="card text-light text-center bg-dark pb-2">
+          <div class="card-body text-white">
+            <div class="img-area mb-4">
+              <img src="{{url_for('static', filename='assets/images/pequeño.jpg')}}" class="img-fluid" alt="" />
+              <h3>home 1</h3>
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                quibusdam saepe ipsum cum repellat minima magnam ut dolore
+                quaerat expedita fugit assumenda, sed voluptatem laboriosam
+                consectetur nulla! Eligendi, ut sint.
+              </p>
+              <button class="btn bg-primary text-white">
+                mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-4 pb-5">
+        <div class="card text-light text-center bg-dark pb-2">
+          <div class="card-body text-white">
+            <div class="img-area mb-4">
+              <img src="{{url_for('static', filename='assets/images/pequeño.jpg')}}" class="img-fluid" alt="" />
+              <h3>home 2</h3>
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                quibusdam saepe ipsum cum repellat minima magnam ut dolore
+                quaerat expedita fugit assumenda, sed voluptatem laboriosam
+                consectetur nulla! Eligendi, ut sint.
+              </p>
+              <button class="btn bg-primary text-white">
+                mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 col-lg-4 pb-5">
+        <div class="card text-light text-center bg-dark pb-2">
+          <div class="card-body text-white">
+            <div class="img-area mb-4">
+              <img src="{{url_for('static', filename='assets/images/pequeño.jpg')}}" class="img-fluid" alt="" />
+              <h3>home 3</h3>
+              <p class="lead">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
+                quibusdam saepe ipsum cum repellat minima magnam ut dolore
+                quaerat expedita fugit assumenda, sed voluptatem laboriosam
+                consectetur nulla! Eligendi, ut sint.
+              </p>
+              <button class="btn bg-primary text-white">
+                mas informacion
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark p-2 text-center">
+    <div class="container">
+      <p class="text-white">
+        © Todos los derechos reservados :: cam :: colombia 2023
+      </p>
+    </div>
+  </footer>
+
+
+
+
+{%endblock%}

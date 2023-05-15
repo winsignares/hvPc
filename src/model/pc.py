@@ -25,8 +25,8 @@ class pc(db.Model):
         self.sistema_operativo= sistema_operativo
         self.fecha_adquisicion= fecha_adquisicion
         
-        with app.app_context():
-            db.create_all()
+with app.app_context():
+    db.create_all()
 
 class pcsSchema(ma.Schema):
     class Meta:
