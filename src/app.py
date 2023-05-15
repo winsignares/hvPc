@@ -32,7 +32,7 @@ app.register_blueprint(routes_home, url_prefix="/fronted")
 @app.route("/")
 def index():
     titulo= "pagina principal"
-    return render_template("/main/login.html", titles= titulo)
+    return render_template("/main/home.html", titles= titulo)
 
 if __name__=="__main__":
     app.run(debug=True, port=5000, host= '0.0.0.0')
