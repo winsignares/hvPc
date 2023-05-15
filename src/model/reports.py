@@ -1,7 +1,7 @@
 from config.db import db, app, ma 
 
 class report(db.Model):
-    __tablename__= "tbl_reports"
+    __tablename__ = "tbl_reports"
     
     
     id= db.Column(db.Integer, primary_key= True)
