@@ -13,29 +13,29 @@
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter Username">
-                    <input class="input100" type="text" name="username" placeholder="Username">
+                    <input id="nombreAdmin" class="input100" type="text" name="username" placeholder="Username">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span> 
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter Email">
-                    <input class="input100" type="text" name="Email" placeholder="Email">
+                    <input id="emailAdmin" class="input100" type="text" name="Email" placeholder="Email">
                     <span class="focus-input100" data-placeholder="&#xf15a;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Enter telefono">
-                    <input class="input100" type="text" name="telefono" placeholder="telefono">
+                    <input id="telAdmin" class="input100" type="text" name="telefono" placeholder="telefono">
                     <span class="focus-input100" data-placeholder="&#xf2be;"></span>
                 </div>
 
 
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input id="passAdmin" class="input100" type="password" name="pass" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
 
                 <p style="color: #fff">Sexo:
-                    <input type="radio" name="hm" value="h" required> Hombre
-                    <input type="radio" name="hm" value="m"> Mujer
+                    <input id="men" type="radio" name="hm" value="h" required> Hombre
+                    <input id="woman" type="radio" name="hm" value="m"> Mujer
                   </p>
                   <br>
 
@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn">
+                    <button class="login100-form-btn" onclick="guardaradmin()">
                         Registrarse
                     </button>
                 </div>
@@ -64,6 +64,6 @@
     </div>
 </div>
 
-
+<script src="{{url_for('static', filename='js/hdvjs/registro.js')}}"></script>
 <div id="dropDownSelect1"></div>
 {%endblock%}

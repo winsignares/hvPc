@@ -1,7 +1,7 @@
 from config.db import db, app, ma 
 
 class pc(db.Model):
-    __tablename__= "tbl_pcs"
+    __tablename__ = "tbl_pcs"
     
     
     id= db.Column(db.Integer, primary_key= True)
