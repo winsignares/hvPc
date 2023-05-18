@@ -6,6 +6,7 @@ class admin(db.Model):
     id= db.Column(db.Integer, primary_key= True)
     full_name= db.Column(db.String(200))
     telefono= db.Column(db.Integer)
+    direccion= db.Column(db.String(200))
     email= db.Column(db.String(200))
     password= db.Column(db.String(200))
     id_genero= db.Column(db.Integer, db.ForeignKey('tbl_generos.id'))

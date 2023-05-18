@@ -7,13 +7,19 @@ routes_register= Blueprint("routes_register",__name__)
 def indexregistro():
     return render_template("/main/registro.html")
 
-@routes_register.route('/guardaradmin',methods=['POST'])
+@routes_register.route('/guardar_admin', methods= ["POST"])
 def saveadmin():
-    #request.form['title']
-    fullname = request.form['full_name']
-    print(fullname)
-    new_admin = admin(fullname)
+    full_name = request.form['fullname']
+    telefono = request.form['telefono']
+    direccion = request.form['direccion']
+    email = request.form['email']
+    password = request.form['password']  
+    id_genero = request.form['id_genero']
+  
+    
+    print(full_name)
+    new_admin = admin(full_name,telefono,direccion,email,password,id_genero)
     db.session.add(new_admin)
     db.session.commit()
-    return {'mensaje': 'informacion insrtada'}
+    return "ok"
 

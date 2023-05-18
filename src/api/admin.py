@@ -25,7 +25,7 @@ def eliminar_admin(id):
     db.session.commit()
     return jsonify(adminSchema.dump(admins))
 
-@app.route('/actualizar_clients', methods=['POST'])
+@app.route('/actualizar_admins', methods=['POST'])
 def actualizar_admin():
     id= request.json['id']
     datos= request.json['full_name','telefono','direccion','email','password','id_genero']

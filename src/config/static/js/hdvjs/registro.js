@@ -1,38 +1,35 @@
 function guardaradmin(){
-  const nameadmin = document.getElementById('nombreAdmin');
-  //const teladmin = document.getElementById('telAdmin');
-  //const passadmin = document.getElementById('passAdmin');
-  //const emailadmin = document.getElementById('emailAdmin');
-  //const menadmin = document.getElementById('men');
-  //const womanadmin = document.getElementById('woman');
+  const nameadmin = document.getElementById('nombreAdmin').value;
+  const direccionadmin = document.getElementById('direccionAdmin').value;
+  const teladmin = document.getElementById('telAdmin').value;
+  const passadmin = document.getElementById('passAdmin').value;
+  const emailadmin = document.getElementById('emailAdmin').value;
+  const generoadmin= document.getElementById('generoAdmin').value;
+  const genero_admin= document.getElementById('generoAdmins').value;
 
- axios.post('/guardaradmin',{
-     fullname:nameadmin.value,
-     //email: emailadmin.value,
-     //telefono: teladmin.value,
-     //password: passadmin.value,
-     ///men: menadmin.value,
-     //woman: womanadmin.value
-    },
-    {
-    headers: {
-        'Content-Type': 'multipart/form-data'
 
+  axios.post('guardar_admin',{
+     fullname: nameadmin,
+     telefono: teladmin,
+     direccion: direccionadmin,
+     email: emailadmin,
+     password: passadmin,
+     id_genero: generoadmin,
+     id_genero: genero_admin
+     
+    },{
+        headers:{
+            'Content-Type': 'multipart/form-data'
         }
-    }
-    ).then((res) => {
+    }).then((res)=>{
         console.log(res.data)
-        alert('funciona')
+        alert("success")
     })
-    .catch((error) => {
+     .catch((error)=>{
         console.error(error)
-        alert('no')
+        alert("no")
     })
-
-
-
-
-
+console.log(generoadmin)
 }
 
 

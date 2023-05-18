@@ -14,12 +14,12 @@
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate="Enter username">
-                    <input class="input100" type="text" name="username" placeholder="Email">
+                    <input id="emailuser" class="input100" type="text" name="username" placeholder="Email">
                     <span class="focus-input100" data-placeholder="&#xf15a;"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate="Enter password">
-                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <input id="passuser" class="input100" type="password" name="pass" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
 
@@ -31,7 +31,7 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <a class="login100-form-btn" href="#">
+                    <a class="login100-form-btn" href="#" onclick="validarlogin()">
                         Login
                     </a>
                 </div>
@@ -53,4 +53,5 @@
 
 
 <div id="dropDownSelect1"></div>
+<script src="{{url_for('static', filename='js/hdvjs/login.js')}}"></script>
 {%endblock%}

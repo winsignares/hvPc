@@ -17,6 +17,11 @@
                     <span class="focus-input100" data-placeholder="&#xf207;"></span> 
                 </div>
 
+                <div class="wrap-input100 validate-input" data-validate = "Enter direccion">
+                    <input id="direccionAdmin" class="input100" type="text" name="direccion" placeholder="Direccion">
+                    <span class="focus-input100" data-placeholder="&#xf278;"></span> 
+                </div>
+
                 <div class="wrap-input100 validate-input" data-validate = "Enter Email">
                     <input id="emailAdmin" class="input100" type="text" name="Email" placeholder="Email">
                     <span class="focus-input100" data-placeholder="&#xf15a;"></span>
@@ -34,8 +39,8 @@
                 </div>
 
                 <p style="color: #fff">Sexo:
-                    <input id="men" type="radio" name="hm" value="h" required> Hombre
-                    <input id="woman" type="radio" name="hm" value="m"> Mujer
+                    <input id="generoAdmins" type="radio" name="hm" value="2" required> Hombre
+                    <input id="generoAdmin" type="radio" name="hm" value="1"> Mujer
                   </p>
                   <br>
 
@@ -64,6 +69,6 @@
     </div>
 </div>
 
-<script src="{{url_for('static', filename='js/hdvjs/registro.js')}}"></script>
 <div id="dropDownSelect1"></div>
+<script src="{{url_for('static', filename='js/hdvjs/registro.js')}}"></script>
 {%endblock%}
