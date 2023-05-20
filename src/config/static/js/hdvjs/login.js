@@ -4,19 +4,25 @@
  function validarlogin() {
     const nameuser= document.getElementById("emailuser").value;
     const passuser= document.getElementById("passuser").value;
-  try {
-      axios.post('validarlogin', {
-      email: nameuser,
-      password: passuser
+    
+    console.log("getData.Email:'",nameuser,"'.and.Password:'",passuser,"'")
+  
+    axios.post('validarlogin', {
+    email: nameuser,
+    password: passuser
+    })
+    .then(response=>{
+      console.log(response.data);
+      alert("success")
+    
+    return true;
+    
+    })
+    .catch(error =>{
+    console.error(error)
+    alert("no")
+    return false;
     });
 
-    // Verificar la respuesta del servidor
-    if (respuesta.data.valido) {
-      console.log('Las credenciales son válidas.');
-    } else {
-      console.log('Las credenciales no son válidas.');
-    }
-  } catch (error) {
-    console.error('Error al validar las credenciales:', error.message);
+    
   }
-}

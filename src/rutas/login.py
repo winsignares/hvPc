@@ -8,16 +8,17 @@ def indexregistro():
     return render_template("/main/login.html")
 
 @routes_login.route('/validarlogin', methods=['POST'])
-def validar_inicio_sesion(email,password):
-    email =admin.query.get(email)
-    password =admin.get(password)
+def validar_inicio_sesion():
+    email =request.json['email']
+    password =request.json['password']
+    
     db.session.commit()
 
     # Buscar el usuario en la base de datos
-    usuario = admin.query.filter_by(email=email).first()
+    usuario = admin.query.filter_by(email=email,password=password).first()
 
     # Verificar el inicio de sesión
-    if usuario and usuario.password == password:
+    if usuario:
         return jsonify({'autenticado': True})
     else:
         return jsonify({'autenticado': False})

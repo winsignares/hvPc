@@ -31,15 +31,19 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <a class="login100-form-btn" href="#" onclick="validarlogin()">
+                    <a id="link"class="login100-form-btn" href="#" onclick="validarlogin()">
                         Login
                     </a>
                 </div>
 
                 <div class="text-center p-t-90">
-                    <a class="txt1"href="#">
+                    <a  class="txt1"href="">
                         Forgot Password?
                     </a>
+                    <script>
+                        const link= document.getElementById("link");
+                        link.setAttribute('href', '/fronted/indexhome')
+                    </script>
                     <div>
                         <a class="txt1" href="/fronted/indexregistro">
                             Registrarse
