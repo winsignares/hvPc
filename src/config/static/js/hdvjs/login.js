@@ -14,14 +14,17 @@
     .then(response=>{
       console.log(response.data);
       alert("success")
+     window.location.href='indexhome';
+     return true;
     
-    return true;
-    
+     
     })
     .catch(error =>{
     console.error(error)
     alert("no")
+  
     return false;
+  
     });
 
     
