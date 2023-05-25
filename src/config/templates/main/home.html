@@ -1,4 +1,5 @@
-{% extends './layout.html' %} {% block body%}
+{% extends './layout.html' %} 
+{% block body%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
@@ -60,81 +61,6 @@
     ></button>
   </div>
 
-<<<<<<< HEAD
-  <section class="about section-padding"id="scrollspyHeading1">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-md-12 col-12">
-          <div class="about-img">
-            <img src="{{url_for('static', filename='assets/images/noc.png')}}" class="img-fluid" alt="" />
-          </div>
-        </div>
-        <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-          <div class="about-text text-white">
-            <h2 >¿Que esperas a utilizar  
-              <br />nuestro sistema?</h2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Dolore, officia voluptatem! Natus error ad officia minima fugit
-              in nihil et voluptas officiis. Natus culpa quidem nam odit modi
-              expedita earum.
-            </p>
-            <a href="#" class="btn btn-primary">crear</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="portafolio-padding" >
-    <div class="row"id="scrollspyHeading3">
-      <div class="col-md-12">
-        <div class="sectio-header text-center text-white pb-5">
-          <h2>¿como funciona?</h2>
-        
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-12 col-lg-4 pb-5">
-        <div class="card text-light text-center  pb-2">
-          <div class="card-body text-white">
-            <div class="img-area mb-4">
-              <img src="{{url_for('static', filename='assets/images/regis.png')}}" class="img-fluid" alt="" />
-              <h3>1. Rellenar datos del<br/>cliente, pc y el reporte</h3>
-              <p class="lead">
-                Empiece por completar las secciones relevantes que componen la hoja de vida del pc del cliente
-              </p>
-     
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-12 col-lg-4 pb-5">
-        <div class="card text-light text-center   pb-2">
-          <div class="card-body text-white">
-            <div class="img-area mb-4">
-              <img src="{{url_for('static', filename='assets/images/boton.png')}}" class="img-fluid " alt="" />
-              <h3>2. darle al boton <br/>de registrar</h3>
-              <p class="lead">
-                Esto reflejara los datos suministrados en una plantilla en los referentes campos de forma organizada
-              </p>
-            
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-md-12 col-lg-4 pb-5">
-        <div class="card text-light text-center pb-2">
-          <div class="card-body text-white">
-            <div class="img-area mb-4">
-              <img src="{{url_for('static', filename='assets/images/insta.png')}}" class="img-fluid" alt="" />
-              <h3>3. Descarga en formato <br/>pdf</h3>
-              <p class="lead">
-               Descargue su hv en un instante y edítelo en cualquier momento.
-              </p>
-           
-            </div>
-=======
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img
@@ -270,37 +196,10 @@
               nulla! Eligendi, ut sint.
             </p>
             <button class="btn bg-primary text-white">mas informacion</button>
->>>>>>> 6002d8853788743f8e53d1857bf4270f934ecdb9
           </div>
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-  </section>
-  <div class="container-fluid pb-4">
-   
-      <img src="{{url_for('static', filename='assets/images/insta.png')}}" class="img-fluid" width="350px" height="350px">
-      <p class="ps-lg-5  ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente accusantium nesciunt, ducimus ob</p>
-
-
-    </div>  
-
-
-  </div>
-  <div class="container-fluid dos">
-    <p class="ps-lg-5 mt-md-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente accusantium nesciunt, ducimus ob</p>
-    <img src="{{url_for('static', filename='assets/images/insta.png')}}" class="img-fluid img-" width="350px" height="350px">
-    
-
-
-  </div>  
-
-  <footer class="bg-dark p-2 text-center">
-    <div class="container">
-      <p class="text-white">
-        © Todos los derechos reservados :: cam :: colombia 2023
-      </p>
-=======
     <div class="col-12 col-md-12 col-lg-4 pb-5">
       <div class="card text-light text-center bg-dark pb-2">
         <div class="card-body text-white">
@@ -321,7 +220,6 @@
           </div>
         </div>
       </div>
->>>>>>> 6002d8853788743f8e53d1857bf4270f934ecdb9
     </div>
     <div class="col-12 col-md-12 col-lg-4 pb-5">
       <div class="card text-light text-center bg-dark pb-2">
@@ -329,7 +227,7 @@
           <div class="img-area mb-4">
             <img
               src="{{url_for('static', filename='assets/images/pequeño.jpg')}}"
-              class="img-fluid"
+              class="img-fluid" 
               alt=""
             />
             <h3>home 3</h3>
@@ -346,68 +244,22 @@
     </div>
   </div>
 </section>
-<div class="container-fluid one ">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="float-left custom-container">
-        <h2>Texto a la izquierda</h2>
-        <p>
-          Este es el contenido de texto que se colocará a la izquierda de la
-          imagen.
-        </p>
-      </div>
-    </div>
-    <div class="imagen col-md-6">
-      <img
-        src="{{url_for('static', filename='assets/images/pequeño.jpg')}}"
-        class="img-fluid"
-        alt="Imagen"
-      />
-    </div>
+<div class="container one pb-5">
+  <div class="text-image-container">
+    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus unde alias repellendus corrupti labore nobis similique omnis, sit quo, modi at! Delectus, iure itaque aspernatur voluptatem quae amet aperiam ea.</p>
+    <img src="{{url_for('static', filename='assets/images/desk.png')}}" class="imagen img-fluid" alt="Imagen">
   </div>
 </div>
 
-<div class="container-fluid two ">
-  <div class="row">
-    <div class="imagen col-md-6">
-      <img
-        src="{{url_for('static', filename='assets/images/pequeño.jpg')}}"
-        class="img-fluid"
-        alt="Imagen"
-      />
-    </div>
-    <div class="col-md-6">
-      <div class="float-right custom-container ">
-        <h2>Texto a la derecha</h2>
-        <p>
-          Este es el contenido de texto que se colocará a la izquierda de la
-          imagen.
-        </p>
-      </div>
-    </div>
+<div class="container two pb-5">
+  <div class="texto-image-container two">
+    <img src="{{url_for('static', filename='assets/images/pequeño.jpg')}}"alt="Imagen">
+    <p class="texto two">Texto a la derecha de la imagen</p>
   </div>
 </div>
 
-<div class="container-fluid tree section-padding">
-  <div class="row">
-    <div class="col-md-6 ">
-      <div class="float-left custom-container">
-        <h2>Texto a la izquierda</h2>
-        <p>
-          Este es el contenido de texto que se colocará a la izquierda de la
-          imagen.
-        </p>
-      </div>
-    </div>
-    <div class="imagen col-md-6">
-      <img
-        src="{{url_for('static', filename='assets/images/pequeño.jpg')}}"
-        class="img-fluid"
-        alt="Imagen"
-      />
-    </div>
-  </div>
-</div>
+
+
 
 <footer class="bg-dark p-2 text-center">
   <div class="container">
