@@ -1,6 +1,6 @@
 body{
 
-background: black;
+background: rgb(175, 199, 255);
 
 }
 
@@ -116,6 +116,7 @@ padding-top: 50px;
 }
 .card{
     margin-bottom: 30px;
+    
 }
 .section-padding{
     padding: 50px 0;
@@ -130,3 +131,23 @@ font-size: 12px;
 .portafolio-padding{
     padding: 300px 80px;
 }
+
+h3{
+color: rgb(182, 182, 182);
+
+}
+
+div.container-fluid{
+justify-content: left;
+display: flex;
+margin-left: 70px;
+}
+
+
+
+div.container-fluid.dos{
+    margin-top: 200px;
+  
+    justify-content: right;
+    display: flex;
+    }
