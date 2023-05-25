@@ -1,6 +1,6 @@
 body{
 
-background: rgb(175, 199, 255);
+background: rgb(255, 255, 255);
 
 }
 
@@ -132,50 +132,4 @@ font-size: 12px;
     padding: 300px 80px;
 }
 
-.container.one {
-    display: flex;
-    justify-content: right;
-    margin-left: 950px;
-    max-width: 500px;
-    background-color: aquamarine;
-    
-}  
-  .text-image-container {
-    display: flex;
-    align-items: center;
-
-  
-
-    background-color: antiquewhite;
-  }
-
-  .imagen{
-    max-width: 100%;
-   
-    
-
-  }
-  
-  .text {
-    margin-right: 30px;
-    align-self: flex-start;
-    
-  }
-
-  .container.two {
-    display: flex;
-    justify-content: left;
-    
-  }
-  
-  .texto-image-container.two {
-    display: flex;
-    align-items: center;
-   
-  }
-  
-  .texto.two {
-    margin-left: 30px;
-    align-self: flex-start;
-  }
 
