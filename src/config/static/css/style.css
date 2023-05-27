@@ -169,6 +169,14 @@ padding: 100px 100px;
 .container.four{
   padding: 200px 100px;
   
+  
+  }
+
+#particles-js{
+height: 100vh;
+width: 100%;
+position: fixed;
+z-index: -1;
   }
 
 
