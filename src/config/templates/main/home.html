@@ -1,20 +1,11 @@
-{% extends './layout.html' %} 
+{% extends './layout.html' %}
 {% block body%}
 <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a href="#" class="navbar-brand"
-      ><span class="text-primary">CvPc</span>xd</a
-    >
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarS"
-      aria-controls="navbarS"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <a href="#" class="navbar-brand"><span class="text-primary">CvPc</span>xd</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+      aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarS">
@@ -37,37 +28,17 @@
 </nav>
 <div id="carouselE" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button
-      type="button"
-      data-bs-target="#carouselE"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselE"
-      data-bs-slide-to="1"
-      aria-current="true"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselE"
-      data-bs-slide-to="2"
-      aria-current="true"
-      aria-label="Slide 3"
-    ></button>
+    <button type="button" data-bs-target="#carouselE" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselE" data-bs-slide-to="1" aria-current="true"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselE" data-bs-slide-to="2" aria-current="true"
+      aria-label="Slide 3"></button>
   </div>
 
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img
-        src="{{url_for('static', filename='assets/images/h.png')}}"
-        class="d-block w-100"
-        alt=""
-      />
+      <img src="{{url_for('static', filename='assets/images/h.png')}}" class="d-block w-100" alt="" />
       <div class="carousel-caption">
         <h5>crea tu cv de pc</h5>
         <p>
@@ -80,55 +51,40 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img
-        src="{{url_for('static', filename='assets/images/new.jpg')}}"
-        class="d-block w-100"
-        alt=""
-      />
+      <img src="{{url_for('static', filename='assets/images/new.jpg')}}" class="d-block w-100" alt="" />
       <div class="carousel-caption">
-        <h5>crea tu cv de pc</h5>
+        <h5>disfruta de nuestro sistema</h5>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id facilis
-          excepturi iure optio necessitatibus maxime aut accusantium impedit, ex
-          quia magni recusandae unde eaque. Culpa, quia debitis. Praesentium,
-          debitis eum.
+          Sumérgete en una experiencia única y aprovecha al máximo nuestro sistema. Te invitamos a disfrutar de una
+          solución innovadora diseñada para facilitar tus tareas diarias. Explora sus características intuitivas,
+          aprovecha su funcionalidad avanzada y descubre cómo simplificar tus procesos de manera eficiente. Nuestro
+          sistema te brinda la oportunidad de disfrutar de una experiencia fluida y productiva, permitiéndote enfocarte
+          en lo que realmente importa. ¡Descubre una forma más inteligente y placentera de trabajar con nuestro sistema!
         </p>
         <a href="#" class="btn btn-primary mt-3">ver mas</a>
       </div>
     </div>
     <div class="carousel-item">
-      <img
-        src="{{url_for('static', filename='assets/images/tr.jpg')}}"
-        class="d-block w-100"
-        alt=""
-      />
+      <img src="{{url_for('static', filename='assets/images/tr.jpg')}}" class="d-block w-100" alt="" />
       <div class="carousel-caption">
-        <h5>crea tu cv de pc</h5>
+        <h5>comienza ya</h5>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id facilis
-          excepturi iure optio necessitatibus maxime aut accusantium impedit, ex
-          quia magni recusandae unde eaque. Culpa, quia debitis. Praesentium,
-          debitis eum.
+          Comienza ya a aprovechar nuestro sistema de reporte de PCs. Obtén acceso inmediato a una herramienta completa
+          y eficiente que te permitirá obtener informes detallados sobre el estado y rendimiento de tus computadoras.
+          Con solo unos clics, podrás analizar y evaluar aspectos clave como el hardware, software, rendimiento general. No pierdas más tiempo buscando soluciones manualmente, con nuestro sistema de reporte
+          podrás tomar decisiones informadas, identificar problemas potenciales y optimizar el rendimiento de tus PCs de
+          manera rápida y sencilla. ¡No esperes más para maximizar la eficiencia y productividad de tus equipos,
+          comienza ya a usar nuestro sistema de reporte de PCs!
         </p>
         <a href="#" class="btn btn-primary mt-3">ver mas</a>
       </div>
     </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#carouselE"
-      data-bs-slide="prev"
-    >
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselE" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">previous</span>
     </button>
 
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#carouselE"
-      data-bs-slide="next"
-    >
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselE" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
 
       <span class="visually-hidden">Next</span>
@@ -139,161 +95,163 @@
 <section class="about section-padding" id="scrollspyHeading1">
   <div class="container">
     <div class="row">
-      <div class="col-lg-4 col-md-12 col-12">
+      <div class="col-lg-5 col-md-12 col-12">
         <div class="about-img">
-          <img
-            src="{{url_for('static', filename='assets/images/noc.png')}}"
-            class="img-fluid"
-            alt=""
-          />
+          <img src="{{url_for('static', filename='assets/images/one.png')}}" class="img-fluid" alt="" />
         </div>
       </div>
-      <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-        <div class="about-text text-white">
-          <h2>informacion <br />servicios</h2>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore,
-            officia voluptatem! Natus error ad officia minima fugit in nihil et
-            voluptas officiis. Natus culpa quidem nam odit modi expedita earum.
+      <div class="col-lg-6 col-md-12 col-12 ps-lg-2 mt-md-5">
+        <div class="about-text text-center text-dark">
+          <h2 class="text-uppercase">crea hojas de vidas <br />para pcs</h2>
+          <p class="lead">
+            El informe presenta un análisis exhaustivo del estado y rendimiento del computador en cuestión. A través de
+            un minucioso estudio, se han examinado aspectos clave como el hardware, el software y las métricas de
+            rendimiento para proporcionar una visión completa de su funcionamiento. Se detalla la configuración del
+            hardware, incluyendo componentes como la CPU, la memoria RAM, el disco duro y la tarjeta gráfica, así como
+            las especificaciones técnicas relevantes. Además, se realiza un examen detallado del software, abarcando el
+            sistema operativo, los programas instalados y sus respectivas versiones. El informe también incluye métricas
+            de rendimiento que evalúan la capacidad de respuesta, la velocidad de procesamiento y el consumo de recursos
+            del computador. A través de este análisis exhaustivo, se identifican posibles problemas, recomendaciones de
+            mejora y oportunidades de optimización para el sistema. Este informe proporciona una visión detallada y
+            precisa del estado actual del computador, lo cual es esencial para tomar decisiones informadas y garantizar
+            su rendimiento óptimo a largo plazo.
           </p>
-          <a href="#" class="btn btn-primary">mas informacion</a>
+          <a href="#" class="btn btn-primary text-uppercase">Crear</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="portafolio-padding">
-  <div class="row" id="scrollspyHeading3">
-    <div class="col-md-12">
-      <div class="sectio-header text-center text-white pb-5">
-        <h2>holaaaaa</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          assumenda consectetur obcaecati ullam totam repellat quae maiores,
-          animi ipsum necessitatibus enim nam,<br />
-          voluptate doloribus omnis cumque reiciendis accusamus excepturi
-          expedita.
-        </p>
-      </div>
-    </div>
-  </div>
+</div>
+
+<div class="container">
   <div class="row">
-    <div class="col-12 col-md-12 col-lg-4 pb-5">
-      <div class="card text-light text-center bg-dark pb-2">
-        <div class="card-body text-white">
-          <div class="img-area mb-4">
-            <img
-              src="{{url_for('static', filename='assets/images/expediente.png')}}"
-              class="img-fluid"
-              alt=""
-            />
-            <h3>home 1</h3>
-            <p class="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-              expedita fugit assumenda, sed voluptatem laboriosam consectetur
-              nulla! Eligendi, ut sint.
-            </p>
-            <button class="btn bg-primary text-white">mas informacion</button>
-          </div>
+    <div class="col-md-12">
+      <div class="section-header text-center text-dark pb-5">
+        <h2 class="text-uppercase  mb-5">¿como funciona?</h2>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 col-lg-3 ">
+      <div class="card one mb-4">
+        <img src="{{url_for('static', filename='assets/images/hombre.png')}}" class="card-img-top img-fluid"
+          alt="Imagen 1">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase">1. Rellenar datos del cliente, pc y el reporte</h5>
+          <p class="card-text lead">Empiece por completar las secciones relevantes que componen la hv del pc del cliente
+          </p>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-12 col-lg-4 pb-5">
-      <div class="card text-light text-center bg-dark pb-2">
-        <div class="card-body text-white">
-          <div class="img-area mb-4">
-            <img
-              src="{{url_for('static', filename='assets/images/hombre.png')}}"
-              class="img-fluid"
-              alt=""
-            />
-            <h3>home 2</h3>
-            <p class="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-              expedita fugit assumenda, sed voluptatem laboriosam consectetur
-              nulla! Eligendi, ut sint.
-            </p>
-            <button class="btn bg-primary text-white">mas informacion</button>
-          </div>
+    <div class="col-md-4">
+      <div class="card two mb-4">
+        <img src="{{url_for('static', filename='assets/images/b.png')}}" class="card-img-top img-fluid" alt="Imagen 2">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase">2. darle al boton</br>de registrar</h5>
+          <p class="card-text lead">Esto reflejara los datos suministrados en una plantilla en los referentes campos de
+            forma organizada</p>
         </div>
       </div>
     </div>
-    <div class="col-12 col-md-12 col-lg-4 pb-5">
-      <div class="card text-light text-center bg-dark pb-2">
-        <div class="card-body text-white">
-          <div class="img-area mb-4">
-            <img
-              src="{{url_for('static', filename='assets/images/boton.png')}}"
-              class="img-fluid" 
-              alt=""
-            />
-            <h3>home 3</h3>
-            <p class="lead">
-              '' Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-              expedita fugit assumenda, sed voluptatem laboriosam consectetur
-              nulla! Eligendi, ut sint.
-            </p>
-            <button class="btn bg-primary text-white">mas informacion</button>
-          </div>
+    <div class="col-md-4">
+      <div class="card tree mb-4">
+        <img src="{{url_for('static', filename='assets/images/expediente.png')}}" class="card-img-top img-fluid"
+          alt="Imagen 3">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase">3. Descarga en formato pdf</h5>
+          <p class="card-text lead">Descargue su hv en un instante y edítelo en cualquier momento.</p>
         </div>
       </div>
     </div>
   </div>
-</section>
-<div class="container pb-5">
-  <div class="row align-items-center">
-    <div class="col-lg-4 col-md-12 col-12 ">
-      <img src="{{url_for('static', filename='assets/images/registro.png')}}"  class="img-fluid" alt="Descripción de la imagen">
-    </div>
-    <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-      <p class="lead"> '' Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-        quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-        expedita fugit assumenda, sed voluptatem laboriosam consectetur
-        nulla! Eligendi, ut sint.</p>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="section-header text-center text-dark pb-5">
+      <h2 class="text-uppercase">opciones</h2>
+
     </div>
   </div>
 </div>
-<div class="container pb-5">
+</div>
+
+
+<div class="container one">
   <div class="row align-items-center">
-    <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-       <p class="lead "> '' Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-        quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-        expedita fugit assumenda, sed voluptatem laboriosam consectetur
-        nulla! Eligendi, ut sint.</p>
+    <div class="col-lg-3 col-md-12 col-12 ">
+      <img src="{{url_for('static', filename='assets/images/registro.png')}}" class="img-fluid"
+        alt="Descripción de la imagen">
     </div>
-    <div class="col-lg-4 col-md-12 col-12">
-    <img src="{{url_for('static', filename='assets/images/imagen.png')}}"  class="img-fluid" alt="Descripción de la imagen">
-    </div> 
+    <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+      <div class="about-text text-center text-dark">
+        <h5 class="text-uppercase">registra los datos de tus clientes tanto como sus pcs y haz</br>un reporte </h5>
+        <p class="lead"> El sistema permite capturar y almacenar información como nombres, direcciones, números de
+          contacto y otra información relevante de tus clientes. Además, podrás registrar datos específicos de las
+          computadoras, tales como el modelo, la marca, la configuración del hardware, el sistema operativo y los
+          programas instalados.
+
+          Una vez registrados los datos, el sistema proporciona la capacidad de generar informes personalizados. Estos
+          informes contienen una recopilación completa y estructurada de la información almacenada, permitiéndote
+          visualizar y analizar los datos de tus clientes y sus computadoras de manera clara y concisa.</p>
+      </div>
+    </div>
   </div>
 </div>
-<div class="container pb-5">
+<div class="container two">
   <div class="row align-items-center">
-    <div class="col-lg-4 col-md-12 col-12 ">
-      <img src="{{url_for('static', filename='assets/images/plantillas.png')}}"  class="img-fluid" alt="Descripción de la imagen">
-    </div>
     <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-      <p class="lead"> '' Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-        quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-        expedita fugit assumenda, sed voluptatem laboriosam consectetur
-        nulla! Eligendi, ut sint.</p>
+      <div class="about-text text-center text-dark">
+        <h5 class="text-uppercase">inserte una foto del cliente. </h5>
+        <p class="lead ">nuestro sistema le permitira insertar una imagen desde los archivos de dascarga.Esta fotografía
+          suele ser utilizada con fines de identificación, personalización o para cualquier otro propósito relevante
+          dentro del contexto en el que se solicita.</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-12 col-12">
+      <img src="{{url_for('static', filename='assets/images/imagen.png')}}" class="img-fluid"
+        alt="Descripción de la imagen">
     </div>
   </div>
 </div>
-<div class="container pb-5">
+<div class="container tree">
+  <div class="row align-items-center">
+    <div class="col-lg-3 col-md-12 col-12 ">
+      <img src="{{url_for('static', filename='assets/images/plantillas.png')}}" class="img-fluid"
+        alt="Descripción de la imagen">
+    </div>
+    <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+      <div class="about-text text-center text-dark">
+        <h5 class="text-uppercase">Genera una plantilla con la informacion suministrada </h5>
+        <p class="lead ">el sistema se encargara de reflejar la informaccion suministrada en una de nuestras plantillas
+          de manera organizada, es una herramienta que automatiza la creación de una plantilla utilizando los datos
+          proporcionados. Esta función toma la información suministrada, como nombres, fechas, direcciones u otros
+          detalles relevantes, y genera una plantilla predefinida con estos datos incorporados.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="container four">
   <div class="row align-items-center">
     <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-       <p class="lead "> '' Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-        quibusdam saepe ipsum cum repellat minima magnam ut dolore quaerat
-        expedita fugit assumenda, sed voluptatem laboriosam consectetur
-        nulla! Eligendi, ut sint.</p>
+      <div class="about-text text-center text-dark">
+        <h5 class="text-uppercase">descargue su plantilla en un pdf </h5>
+        <p class="lead ">Obtenga su plantilla lista para usar en formato PDF. Descargue el archivo y acceda a una
+          plantilla listo para utilizar en su proyecto. El formato PDF asegura que la plantilla mantenga su diseño y
+          formato original en cualquier dispositivo y plataforma. Simplemente haga clic en el enlace de descarga y
+          disfrute de una solución conveniente y portátil para sus necesidades.</p>
+      </div>
+
     </div>
-    <div class="col-lg-4 col-md-12 col-12">
-    <img src="{{url_for('static', filename='assets/images/descargar-pdf.png')}}"  class="img-fluid" alt="Descripción de la imagen">
-    </div> 
+    <div class="col-lg-3 col-md-12 col-12">
+      <img src="{{url_for('static', filename='assets/images/descargar-pdf.png')}}" class="img-fluid"
+        alt="Descripción de la imagen">
+    </div>
   </div>
 </div>
 
@@ -303,7 +261,7 @@
 
 
 <footer class="bg-dark p-2 text-center">
-  <div class="container">
+  <div class="container ">
     <p class="text-white">
       © Todos los derechos reservados :: cam :: colombia 2023
     </p>
