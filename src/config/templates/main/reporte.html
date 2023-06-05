@@ -1,13 +1,21 @@
-{% extends './layout.html' %}
-{% block body%}
-<link rel="stylesheet" href="{{url_for('static', filename='css/report.css')}}">
-
+{% extends './layout.html' %} {% block body%}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename='css/report.css')}}"
+/>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a href="#" class="navbar-brand"><span class="text-primary">hdv</span>pc</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
-      aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarS"
+      aria-controls="navbarS"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarS">
@@ -32,102 +40,111 @@
 <div class="d-flex">
   <div class="container report mb-5">
     <h1 class="text-center">Formulario de Reporte de PC</h1>
-    <hr>
+    <hr />
 
-    <form class="row g-3">
-      <h1>clientes</h1>
+    <form id="formulario" class="row g-3">
+      <h1 class="text-uppercase lead">clientes</h1>
       <div class="col-md-6">
-
         <label class="form-label">Nombre completo:</label>
-        <input type="text" class="form-control" id="namecliente">
+        <input type="text" class="form-control" id="namecliente" />
       </div>
       <div class="col-md-6">
         <label class="form-label">Telefono:</label>
-        <input type="number" class="form-control" id="telecliente">
+        <input type="number" class="form-control" id="telecliente" />
       </div>
       <div class="col-12">
         <label class="form-label">Direccion:</label>
-        <input type="text" class="form-control" id="direccioncliente">
+        <input type="text" class="form-control" id="direccioncliente" />
       </div>
-
 
       <div class="col-md-4">
         <label class="form-label">Genero:</label>
-        <select class="form-select">
+        <select id="generos" class="form-select">
           <option selected>Choose...</option>
-          <option id="men" value="1">masculino</option>
-          <option id="woman" value="2">femenino</option>
+          <option value="2">masculino</option>
+          <option value="1">femenino</option>
         </select>
       </div>
       <div class="col-md-4">
         <label class="form-label">Tipo de documento:</label>
-        <select class="form-select">
+        <select id="documento" class="form-select">
           <option selected>Choose...</option>
-          <option id="tarjeta" value="tarjeta de identidad">tarjeta de identidad</option>
-          <option id="cedula" value="cedula de ciudadania">cedula de ciudadania</option>
+          <option>tarjeta de identidad</option>
+          <option>cedula de ciudadania</option>
         </select>
       </div>
 
-
       <div class="col-12 mb-5">
-        <button type="submit" class="btn btn-primary" onclick="guardar_cliente()">Registrar</button>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          id="ok"
+          onclick="guardar_cliente();prevenir()"
+        >
+          Registrar
+        </button>
       </div>
-      <h1>Pcs</h1>
+      <h1 class="text-uppercase lead">Pcs</h1>
       <div class="col-md-6">
-
         <label class="form-label">Marca:</label>
-        <input type="text" class="form-control" id="marca">
+        <input type="text" class="form-control" id="marca" />
       </div>
       <div class="col-md-6">
         <label class="form-label">Serie:</label>
-        <input type="text" class="form-control" id="serie">
+        <input type="text" class="form-control" id="serie" />
       </div>
       <div class="col-6">
         <label class="form-label">Capacidad Ram:</label>
-        <input type="text" class="form-control" id="ram">
+        <input type="text" class="form-control" id="ram" />
       </div>
       <div class="col-6">
         <label class="form-label">Tarjeta grafica:</label>
-        <input type="text" class="form-control" id="terjetagra">
+        <input type="text" class="form-control" id="terjetagra" />
       </div>
       <div class="col-6">
         <label class="form-label">Capacidad disco duro:</label>
-        <input type="text" class="form-control" id="discoduro">
+        <input type="text" class="form-control" id="discoduro" />
       </div>
       <div class="col-6">
         <label class="form-label">Procesador:</label>
-        <input type="text" class="form-control" id="procesador">
+        <input type="text" class="form-control" id="procesador" />
       </div>
       <div class="col-6">
         <label class="form-label">Sistema operativo:</label>
-        <input type="text" class="form-control" id="sitemaop">
+        <input type="text" class="form-control" id="sitemaop" />
       </div>
 
       <div class="col-6">
         <label>Fecha:</label>
-        <input type="date" class="form-control" id="fecha">
+        <input id="fecha" type="date" class="form-control"  />
       </div>
 
       <div class="col-12 mb-5">
-        <button id="ok" type="submit" class="btn btn-primary" onclick="guardar_pc()">Registrar</button>
+        <button
+          id="ok"
+          type="submit"
+          class="btn btn-primary"
+          onclick="guardar_pc();prevenir()"
+        >
+          Registrar
+        </button>
       </div>
       <h1 class="text-uppercase lead">reporte</h1>
       <div class="col-md-6">
-
         <label class="form-label">Identificacion del cliente:</label>
-        <input type="text" class="form-control" id="marca">
+        <input type="text" class="form-control" id="marca" />
       </div>
       <div class="col-md-6">
         <label class="form-label">Identificacion del pc:</label>
-        <input type="text" class="form-control" id="serie">
+        <input type="text" class="form-control" id="serie" />
       </div>
       <div class="col-6">
         <label class="form-label">Identificacion del administrador:</label>
-        <input type="text" class="form-control" id="ram">
+        <input type="text" class="form-control" id="ram" />
       </div>
       <div class="col-6">
         <label class="form-label">estado:</label>
-        <input type="text" class="form-control" id="procesador">
+        <input type="text" class="form-control" id="procesador" />
       </div>
       <div class="col-6">
         <label class="form-label">programas instalados:</label>
@@ -140,21 +157,23 @@
 
       <div class="col-6">
         <label>Fecha de inicio:</label>
-        <input type="date" class="form-control" id="fecha">
+        <input type="date" class="form-control" id="fecha" />
       </div>
       <div class="col-6">
         <label>Fecha de fin:</label>
-        <input type="date" class="form-control" id="fecha">
+        <input type="date" class="form-control" id="fecha" />
       </div>
       <div class="col-12 mb-5">
-        <button id="ok" type="submit" class="btn btn-primary" onclick="">Registrar</button>
+        <button id="ok" type="submit" class="btn btn-primary" onclick="">
+          Registrar
+        </button>
       </div>
     </form>
   </div>
-  <div class="container dos mb-5 ">
-    <div class="row ">
+  <div class="container dos mb-5">
+    <div class="row">
       <div class="col-md-6 offset-md-3">
-       <!--------- <div class="header">
+        <!--------- <div class="header">
           <h1>Curriculum Vitae</h1>
         </div>
         <div class="text-center">
@@ -196,7 +215,12 @@
               <p>Fecha: Fecha de inicio - Fecha de finalización</p>
             </li>
           </ul>
-        </div>----->
+        </div>-->
+        <div class="col-8 mx-auto d-flex justify-content-end bg-black">
+          <button id="ok" type="submit" class="btn btn-primary" onclick="">
+            Descargar
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -209,17 +233,6 @@
     </p>
   </div>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="{{url_for('static', filename='js/hdvjs/report.js')}}"></script>
 {%endblock%}

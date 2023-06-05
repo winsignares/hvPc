@@ -2,19 +2,21 @@ function guardar_cliente(){
     const name = document.getElementById('namecliente').value;
     const direccion = document.getElementById('direccioncliente').value;
     const telecliente = document.getElementById('telecliente').value;
-    const tipodocumneto = document.getElementById('cedula').value;
-    const men = document.getElementById('men').value;
-    const woman = document.getElementById('woman').value;
-    const tarjeta = document.getElementById('tarjeta').value;
-
+    const tipodocumento = document.getElementById('documento').value;
+    
+    const generos = document.getElementById('generos').value;
+   
+    
+    
+    
     axios.post('guardar_cliente',{
-        full_name:name,
-        tipo_document:tipodocumneto,
-        tipo_document:tarjeta,
+        full_name:name, 
+        tipo_document:tipodocumento,
         telefono:telecliente,
         direccion:direccion,
-        id_genero:men,
-        id_genero:woman
+        id_genero:generos
+      
+        
     },{
         headers:{
             'Content-Type': 'multipart/form-data'
@@ -27,12 +29,12 @@ function guardar_cliente(){
         console.error(error)
         alert("no")
     })
-console.log(tipodocumneto)
+  console.log(generos)
     }
     
 
     function guardar_pc(){
-        var boton =document.getElementById('ok')
+        
         const marcas = document.getElementById('marca').value;
         const series= document.getElementById('serie').value;
         const capacidad_ram = document.getElementById('ram').value;
@@ -41,11 +43,7 @@ console.log(tipodocumneto)
         const procesador = document.getElementById('procesador').value;
         const sistema = document.getElementById('sistemaop').value;
         const fecha = document.getElementById('fecha').value;
-        boton.addEventListener('click', function(event) {
-            event.preventDefault();
-            // Realiza tus acciones o muestra tus contenidos sin que la página se actualice
-            console.log('Haz clic en el enlace sin actualizar la página');
-          });
+       
         axios.post('guardar_pcs',{
             marca:marcas,
             serie:series,
@@ -69,6 +67,14 @@ console.log(tipodocumneto)
         })
     console.log(fecha)
         }
+
+
+function prevenir(){
+const form = document.getElementById("formulario");
+console.log("paso")
+form.addEventListener("submit", function(event){
+    event.preventDefault();
+})}
 
 
 
