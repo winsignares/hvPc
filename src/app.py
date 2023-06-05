@@ -14,6 +14,7 @@ from api.reports import route_reports
 from rutas.login import routes_login
 from rutas.registro import routes_register
 from rutas.home import routes_home
+from rutas.reporte import routes_report
 
 
 #ubicacion de las apis 
@@ -27,6 +28,7 @@ app.register_blueprint(routes_genero, url_prefix="/api")
 app.register_blueprint(routes_login, url_prefix="/fronted")
 app.register_blueprint(routes_register, url_prefix="/fronted")
 app.register_blueprint(routes_home, url_prefix="/fronted")
+app.register_blueprint(routes_report, url_prefix="/fronted")
 
 @app.route("/")
 def index():

@@ -15,8 +15,6 @@ def saveadmin():
     email = request.form['email']
     password = request.form['password']  
     id_genero = request.form['id_genero']
-  
-    
     print(full_name)
     new_admin = admin(full_name,telefono,direccion,email,password,id_genero)
     db.session.add(new_admin)

@@ -14,8 +14,8 @@
     .then(response=>{
       console.log(response.data);
       alert("success")
-     window.location.href='indexhome';
-     return true;
+      window.location.href='indexhome';
+      return true;
     
      
     })
