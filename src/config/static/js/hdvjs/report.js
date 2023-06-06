@@ -1,3 +1,4 @@
+
 function guardar_cliente() {
     const name = document.getElementById('namecliente').value;
     const direccion = document.getElementById('direccioncliente').value;
@@ -176,4 +177,36 @@ function limpiarReportes() {
     fecha_fin.value = ""
 
 
+}
+function mostrarImagen(event){
+var imagenSource= event.target.result;
+var previewImage= document.getElementById('preview');
+previewImage.src = imagenSource;
+
+}
+function procesarArchivo(event){
+var imagen= event.target.files[0];
+var lector = new FileReader();
+lector.addEventListener('load', mostrarImagen, false)
+lector.readAsDataURL(imagen);
+
+
+}
+
+document.getElementById("archivo")
+ .addEventListener('change', procesarArchivo, false);
+
+
+
+function buscarAdmin(){
+
+    const inputadmin= document.getElementById("admin")
+    axios.get("obtenerNombre",{
+        "full_name": inputadmin.value
+
+    }
+    ).then((res) => {
+        console.log(res.data)
+        alert("success")
+    })
 }

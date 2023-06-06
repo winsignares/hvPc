@@ -1,8 +1,9 @@
 from config.db import db, app, ma
-from flask import Blueprint,render_template, request
+from flask import Blueprint,render_template, request, jsonify
 from model.clients import clients
 from model.pc import pc
 from model.reports import report
+from model.admin import admin
 routes_report= Blueprint("routes_report",__name__)
 
 @routes_report.route("/indexreport", methods= ["GET"])
@@ -56,3 +57,20 @@ def savereports():
     db.session.add(new_reports)
     db.session.commit()
     return "ok"
+
+
+@routes_report.route('/obtenerNombre/<id_admin>', methods=['GET'])
+def obtener_nombre_por_id(id_admin):
+   
+    
+    dato = report.query.filter_by(id_admin=id_admin).first()
+
+    if dato:
+        relacion= admin.query.filter_by(id=dato.id_admin).first()
+       
+    
+    if relacion:
+        return jsonify({'full_name': relacion.full_name})
+    else:
+        # Si no se encuentra el ID, devolver una respuesta vacía
+        return jsonify({})

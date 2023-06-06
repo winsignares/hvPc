@@ -40,3 +40,8 @@ def guardar_reports():
     db.session.add(newreport)
     db.session.commit()
     return redirect('/reports')
+
+
+
+
+
