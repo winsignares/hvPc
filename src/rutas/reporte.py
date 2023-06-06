@@ -2,6 +2,7 @@ from config.db import db, app, ma
 from flask import Blueprint,render_template, request
 from model.clients import clients
 from model.pc import pc
+from model.reports import report
 routes_report= Blueprint("routes_report",__name__)
 
 @routes_report.route("/indexreport", methods= ["GET"])
@@ -33,7 +34,25 @@ def savepcs():
     sistema_operativo = request.form['sistema_operativo']
     fecha_adquisicion = request.form['fecha_adquisicion']
     print(marca)
-    new_pc = clients(marca,serie,capacidad_Ram,tarjeta_grafica,capacidad_discoDuro,procesador,sistema_operativo,fecha_adquisicion)
+    new_pc = pc(marca,serie,capacidad_Ram,tarjeta_grafica,capacidad_discoDuro,procesador,sistema_operativo,fecha_adquisicion)
     db.session.add(new_pc)
+    db.session.commit()
+    return "ok"
+
+
+
+@routes_report.route('/guardar_reports', methods= ["POST"])
+def savereports():
+    id_cliente= request.form['id_cliente'] 
+    id_pc = request.form['id_pc']
+    id_admin = request.form['id_admin']
+    programas_install = request.form['programas_install']
+    observaciones = request.form['observaciones']
+    estado = request.form['estado']
+    fecha_inicio = request.form['fecha_inicio']
+    fecha_fin = request.form['fecha_fin']
+    print(id_cliente)
+    new_reports = report(id_cliente,id_pc,id_admin,programas_install,observaciones,estado,fecha_inicio,fecha_fin)
+    db.session.add(new_reports)
     db.session.commit()
     return "ok"

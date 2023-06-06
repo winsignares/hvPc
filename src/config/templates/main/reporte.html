@@ -57,7 +57,7 @@
         <input type="text" class="form-control" id="direccioncliente" />
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-6">
         <label class="form-label">Genero:</label>
         <select id="generos" class="form-select">
           <option selected>Choose...</option>
@@ -65,7 +65,7 @@
           <option value="1">femenino</option>
         </select>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6 mb-3">
         <label class="form-label">Tipo de documento:</label>
         <select id="documento" class="form-select">
           <option selected>Choose...</option>
@@ -74,15 +74,27 @@
         </select>
       </div>
 
-      <div class="col-12 mb-5">
-        <button
+      <div class="col-md-3">
+        <button 
           type="submit"
-          class="btn btn-primary"
+          class="btn btn-primary d-inline-block mr-3"
           id="ok"
           onclick="guardar_cliente();prevenir()"
         >
           Registrar
         </button>
+
+      </div>
+      <div class="col-md-5 mb-5 ">
+        <button
+          type="submit"
+          class="btn btn-danger d-inline-block ml-2"
+          id="ok"
+          onclick="limpiarcliente()"
+        >
+          Limpiar
+        </button>
+        
       </div>
       <h1 class="text-uppercase lead">Pcs</h1>
       <div class="col-md-6">
@@ -93,80 +105,107 @@
         <label class="form-label">Serie:</label>
         <input type="text" class="form-control" id="serie" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Capacidad Ram:</label>
         <input type="text" class="form-control" id="ram" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Tarjeta grafica:</label>
-        <input type="text" class="form-control" id="terjetagra" />
+        <input type="text" class="form-control" id="tarjetagra" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Capacidad disco duro:</label>
         <input type="text" class="form-control" id="discoduro" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Procesador:</label>
         <input type="text" class="form-control" id="procesador" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Sistema operativo:</label>
-        <input type="text" class="form-control" id="sitemaop" />
+        <input type="text" class="form-control" id="sistemaop" />
       </div>
 
-      <div class="col-6">
+      <div class="col-md-6 mb-3">
         <label>Fecha:</label>
         <input id="fecha" type="date" class="form-control"  />
       </div>
 
-      <div class="col-12 mb-5">
+      <div class="col-md-3 ">
         <button
           id="ok"
           type="submit"
-          class="btn btn-primary"
+          class="btn btn-primary d-inline-block mr-2"
           onclick="guardar_pc();prevenir()"
         >
           Registrar
         </button>
       </div>
+      <div class="col-md-5 mb-5 ">
+        <button
+          type="submit"
+          class="btn btn-danger d-inline-block ml-2"
+          id="ok"
+          onclick="limpiarpc()"
+        >
+          Limpiar
+        </button>
+        
+      </div>
       <h1 class="text-uppercase lead">reporte</h1>
       <div class="col-md-6">
         <label class="form-label">Identificacion del cliente:</label>
-        <input type="text" class="form-control" id="marca" />
+        <input type="text" class="form-control" id="clientes" />
       </div>
       <div class="col-md-6">
         <label class="form-label">Identificacion del pc:</label>
-        <input type="text" class="form-control" id="serie" />
+        <input type="text" class="form-control" id="pcs" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Identificacion del administrador:</label>
-        <input type="text" class="form-control" id="ram" />
+        <input type="text" class="form-control" id="admin" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">estado:</label>
-        <input type="text" class="form-control" id="procesador" />
+        <input type="text" class="form-control" id="estado" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">programas instalados:</label>
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea id="programas" class="form-control" rows="3"></textarea>
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <label class="form-label">Observaciones:</label>
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea id="observaciones" class="form-control" rows="3"></textarea>
       </div>
 
-      <div class="col-6">
+      <div class="col-md-6">
         <label>Fecha de inicio:</label>
-        <input type="date" class="form-control" id="fecha" />
+        <input type="date" class="form-control" id="fechaini" />
       </div>
-      <div class="col-6">
+      <div class="col-md-6 mb-3">
         <label>Fecha de fin:</label>
-        <input type="date" class="form-control" id="fecha" />
+        <input type="date" class="form-control" id="fechaend" />
       </div>
-      <div class="col-12 mb-5">
-        <button id="ok" type="submit" class="btn btn-primary" onclick="">
+      <div class="col-md-3 ">
+        <button
+          id="ok"
+          type="submit"
+          class="btn btn-primary d-inline-block mr-2"
+          onclick="guardar_reportes();prevenir()"
+        >
           Registrar
         </button>
+      </div>
+      <div class="col-md-5 mb-5 ">
+        <button
+          type="submit"
+          class="btn btn-danger d-inline-block ml-2"
+          id="ok"
+          onclick="limpiarReportes()"
+        >
+          Limpiar
+        </button>
+        
       </div>
     </form>
   </div>
