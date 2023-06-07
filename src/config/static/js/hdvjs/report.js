@@ -199,14 +199,15 @@ document.getElementById("archivo")
 
 
 function buscarAdmin(){
+const inputAdmin= document.getElementById("admin").value;
+const h3= document.getElementById("nomClient")
 
-    const inputadmin= document.getElementById("admin")
-    axios.get("obtenerNombre",{
-        "full_name": inputadmin.value
-
-    }
-    ).then((res) => {
-        console.log(res.data)
-        alert("success")
+    axios.get(`obtenerNombre/${inputAdmin}`)
+    .then(response=>{
+        const data= response.data;
+       h3.innerText= data.full_name
     })
-}
+    .catch(error=>{
+        console.error("no salio como esperaba", error);
+    })
+}  
