@@ -198,6 +198,7 @@ document.getElementById("archivo")
 
 
 
+<<<<<<< HEAD
 function buscarAdmin() {
 
     const inputadmin = document.getElementById("admin").value
@@ -213,3 +214,18 @@ function buscarAdmin() {
     }) 
     console.log(inputadmin)
 }
+=======
+function buscarAdmin(){
+const inputAdmin= document.getElementById("admin").value;
+const h3= document.getElementById("nomClient")
+
+    axios.get(`obtenerNombre/${inputAdmin}`)
+    .then(response=>{
+        const data= response.data;
+       h3.innerText= data.full_name
+    })
+    .catch(error=>{
+        console.error("no salio como esperaba", error);
+    })
+}  
+>>>>>>> 0ede74cc9f088d77aea0999f127dcbbe2e9ab954
