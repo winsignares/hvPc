@@ -178,35 +178,38 @@ function limpiarReportes() {
 
 
 }
-function mostrarImagen(event){
-var imagenSource= event.target.result;
-var previewImage= document.getElementById('preview');
-previewImage.src = imagenSource;
+function mostrarImagen(event) {
+    var imagenSource = event.target.result;
+    var previewImage = document.getElementById('preview');
+    previewImage.src = imagenSource;
 
 }
-function procesarArchivo(event){
-var imagen= event.target.files[0];
-var lector = new FileReader();
-lector.addEventListener('load', mostrarImagen, false)
-lector.readAsDataURL(imagen);
+function procesarArchivo(event) {
+    var imagen = event.target.files[0];
+    var lector = new FileReader();
+    lector.addEventListener('load', mostrarImagen, false)
+    lector.readAsDataURL(imagen);
 
 
 }
 
 document.getElementById("archivo")
- .addEventListener('change', procesarArchivo, false);
+    .addEventListener('change', procesarArchivo, false);
 
 
 
-function buscarAdmin(){
+function buscarAdmin() {
 
-    const inputadmin= document.getElementById("admin")
-    axios.get("obtenerNombre",{
-        "full_name": inputadmin.value
+    const inputadmin = document.getElementById("admin").value
 
-    }
-    ).then((res) => {
-        console.log(res.data)
-        alert("success")
-    })
+    axios.get("obtenerNombre/{id_admin}")
+        
+    
+    .then(res => {
+        const dato= res.data;
+        const admin= dato.relacion;
+        console.log(admin)
+       
+    }) 
+    console.log(inputadmin)
 }

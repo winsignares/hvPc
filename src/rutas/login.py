@@ -12,7 +12,7 @@ def validar_inicio_sesion():
     email =request.json['email']
     password =request.json['password']
     
-    db.session.commit()
+   
 
     # Buscar el usuario en la base de datos
     usuario = admin.query.filter_by(email=email,password=password).first()
