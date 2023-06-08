@@ -192,7 +192,7 @@
           id="ok"
           type="submit"
           class="btn btn-primary d-inline-block mr-2"
-          onclick="guardar_reportes();prevenir();buscarAdmin()"
+          onclick="guardar_reportes();prevenir();buscarAdmin();mostrarDataClients()"
         >
           Registrar
         </button>
@@ -227,12 +227,13 @@
           <p>administrador</p>
           <hr />
         </div>
-        <!--------- <div>
-          <h4>Información de Contacto</h4>
+         <div>
+          <h4>Información del cliente</h4>
           <ul>
-            <li><strong>Teléfono:</strong> (123) 456-7890</li>
-            <li><strong>Correo Electrónico:</strong> ejemplo@example.com</li>
-            <li><strong>Dirección:</strong> Ciudad, País</li>
+            <li id="tel"><strong>Teléfono:</strong> (123) 456-7890</li>
+            <li id="nom"><strong>Nombre completo:</strong> ejemplo@example.com</li>
+            <li id="documents"><strong>Tipo de documento:</strong> ejemplo@example.com</li>
+            <li id="direcc"><strong>Dirección:</strong> Ciudad, País</li>
           </ul>
         </div>
         <div>

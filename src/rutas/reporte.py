@@ -70,11 +70,24 @@ def obtener_nombre_por_id(id):
     
     
        }
-       
+   return jsonify(data)
 
+@routes_report.route('/obtenerClients/<id>', methods=['GET'])
+def obtener_clientes_id(id):
+   clientes= clients.query.get(id)
+   
+   if clientes is None:
+       return jsonify({"error": 'id no encontrado'})
+   datos ={
+       'full_name': clientes.full_name,
+       'tipo_document': clientes.tipo_document,
+       'telefono': clientes.telefono,
+       'direccion': clientes.direccion
+    }
+   return jsonify(datos)
            
        
        
    
-   return jsonify(data)
+  
   

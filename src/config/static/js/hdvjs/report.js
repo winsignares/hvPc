@@ -211,3 +211,26 @@ const h3= document.getElementById("nomClient")
         console.error("no salio como esperaba", error);
     })
 }  
+function mostrarDataClients(){
+const inputClients= document.getElementById("clientes").value;
+const telefono= document.getElementById("tel")
+const nombre_completo= document.getElementById("nom")
+const tipo_documents= document.getElementById("documents")
+const direccions= document.getElementById("direcc")
+
+
+    axios.get(`obtenerClients/${inputClients}`)
+    .then(response=>{
+        const datos= response.data;
+       telefono.innerHTML= datos.telefono,
+       nombre_completo.innerText= datos.full_name,
+       tipo_documents.innerText= datos.tipo_document,
+       direccions.innerText= datos.direccion
+
+    })
+    .catch(error=>{
+        console.error("no salio como esperaba", error);
+    })
+}  
+
+
