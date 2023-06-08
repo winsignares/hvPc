@@ -192,15 +192,25 @@
           id="ok"
           type="submit"
           class="btn btn-primary d-inline-block mr-2"
-          onclick="guardar_reportes();prevenir();buscarAdmin()"
+          onclick="guardar_reportes();prevenir();"
         >
           Registrar
         </button>
       </div>
-      <div class="col-md-5 mb-5">
+      <div class="col-md-3">
         <button
           type="submit"
           class="btn btn-danger d-inline-block ml-2"
+          id="ok"
+          onclick="buscarAdmin()"
+        >
+          Mostrar
+        </button>
+      </div>
+      <div class="col-md-3 ">
+        <button
+          type="submit"
+          class="btn btn-success d-inline-block ml-2"
           id="ok"
           onclick="limpiarReportes()"
         >

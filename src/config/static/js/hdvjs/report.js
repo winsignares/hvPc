@@ -103,6 +103,7 @@ function guardar_reportes() {
             alert("no")
         })
     console.log(fecha_fin)
+    
 }
 
 
@@ -198,23 +199,6 @@ document.getElementById("archivo")
 
 
 
-<<<<<<< HEAD
-function buscarAdmin() {
-
-    const inputadmin = document.getElementById("admin").value
-
-    axios.get("obtenerNombre/{id_admin}")
-        
-    
-    .then(res => {
-        const dato= res.data;
-        const admin= dato.relacion;
-        console.log(admin)
-       
-    }) 
-    console.log(inputadmin)
-}
-=======
 function buscarAdmin(){
 const inputAdmin= document.getElementById("admin").value;
 const h3= document.getElementById("nomClient")
@@ -227,5 +211,5 @@ const h3= document.getElementById("nomClient")
     .catch(error=>{
         console.error("no salio como esperaba", error);
     })
+    
 }  
->>>>>>> 0ede74cc9f088d77aea0999f127dcbbe2e9ab954
