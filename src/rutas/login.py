@@ -7,20 +7,25 @@ routes_login= Blueprint("routes_login",__name__)
 def indexregistro():
     return render_template("/main/login.html")
 
+@routes_login.route("/indexhome",methods= ["GET"])
+def indexhome():
+    return render_template("/main/home.html")
+
 @routes_login.route('/validarlogin', methods=['POST'])
 def validar_inicio_sesion():
     email =request.json['email']
     password =request.json['password']
     
-    db.session.commit()
+
 
     # Buscar el usuario en la base de datos
     usuario = admin.query.filter_by(email=email,password=password).first()
 
     # Verificar el inicio de sesión
     if usuario:
-        return jsonify({'autenticado': True})
+       print("paso")
+       href = "/fronted/indexhome"
     else:
-        return jsonify({'autenticado': False})
-    
-    
+       href = "/fronted/indexlogin"
+    print("no")
+    return href

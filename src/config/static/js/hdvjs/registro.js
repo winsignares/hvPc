@@ -4,8 +4,8 @@ function guardaradmin(){
   const teladmin = document.getElementById('telAdmin').value;
   const passadmin = document.getElementById('passAdmin').value;
   const emailadmin = document.getElementById('emailAdmin').value;
-  const generoadmin= document.getElementById('generoAdmin').value;
-  const genero_admin= document.getElementById('generoAdmins').value;
+  const generoadmin= document.getElementById('generos').value;
+  
 
 
   axios.post('guardar_admin',{
@@ -15,7 +15,7 @@ function guardaradmin(){
      email: emailadmin,
      password: passadmin,
      id_genero: generoadmin,
-     id_genero: genero_admin
+     
      
     },{
         headers:{
@@ -23,24 +23,48 @@ function guardaradmin(){
         }
     }).then((res)=>{
         console.log(res.data)
-        alert("success")
+     confirmarDatos()
+
     })
      .catch((error)=>{
         console.error(error)
-        alert("no")
+        errorDatos()
+       
     })
 console.log(generoadmin)
 }
 
 
-function DatoSeguro() {
+function confirmarDatos() {
     Swal.fire({
-        title: 'Deseas Guardar este dato',
-        text: 'Recuerda que este dato será almacenado',
-        confirmButtonText: 'confirmar',
-        showCancelButton: true,
-        icon: 'warning'
+        title: 'Usted ha sido correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
 
     })
 };
 
+function errorDatos(){
+    swal.fire({
+        title: 'Error en los datos',
+        text: 'por favor rellenar los campos correctamente',
+        confirmButtonText: 'listo',
+        icon: 'error'
+
+
+    }
+
+
+    )
+}
+
+function prevenir() {
+    const login = document.getElementById("log");
+    console.log("paso")
+    login.addEventListener("submit", function (event) {
+        event.preventDefault();
+    })
+}

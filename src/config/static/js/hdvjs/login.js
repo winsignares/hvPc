@@ -11,21 +11,30 @@
     email: nameuser,
     password: passuser
     })
-    .then(response=>{
-      console.log(response.data);
-      alert("success")
-      window.location.href='indexhome';
-      return true;
-    
-     
-    })
-    .catch(error =>{
-    console.error(error)
-    alert("no")
-  
-    return false;
-  
-    });
+    .then(function(res){        
+      console.log(res.data);
+      confirmarDatos()
+      window.location.href = res.data
 
+  })
+  .catch((err) => {
+      console.log(err);
+  })
+}
+function prevenir() {
+    const login = document.getElementById("login");
+    console.log("paso")
+    login.addEventListener("submit", function (event) {
+        event.preventDefault();
+    })
+}
+function confirmarDatos() {
+  Swal.fire({
+      title: 'usted a iniciado sesion correctamente',
+      text: 'disfrute de nuestro sistema',
+      confirmButtonText: 'listo',
     
-  }
+      icon: 'success'
+
+  })
+};
