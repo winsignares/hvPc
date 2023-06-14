@@ -24,11 +24,11 @@ function guardar_cliente() {
         }
     }).then((res) => {
         console.log(res.data)
-        alert("success")
+        confirmarDatos()
     })
         .catch((error) => {
             console.error(error)
-            alert("no")
+            errorDatos()
         })
     console.log(generos)
 }
@@ -60,11 +60,11 @@ function guardar_pc() {
         }
     }).then((res) => {
         console.log(res.data)
-        alert("success")
+        confirmarDatosPc()
     })
         .catch((error) => {
             console.error(error)
-            alert("no")
+           errorDatos()
         })
     console.log(fecha)
 }
@@ -87,6 +87,7 @@ function guardar_reportes() {
         id_admin: admin,
         programas_install: programas,
         observaciones: observaciones,
+        
         estado: estado,
         fecha_inicio: fecha_ini,
         fecha_fin: fecha_fin
@@ -96,11 +97,11 @@ function guardar_reportes() {
         }
     }).then((res) => {
         console.log(res.data)
-        alert("success")
+        confirmarDatosReport()
     })
         .catch((error) => {
             console.error(error)
-            alert("no")
+            errorDatos()
         })
     console.log(fecha_fin)
     
@@ -234,4 +235,50 @@ const direccions= document.getElementById("direcc")
     })
 }  
 
+function confirmarDatos() {
+    Swal.fire({
+        title: 'cliente correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
 
+    })
+};
+function confirmarDatosPc() {
+    Swal.fire({
+        title: 'Pc correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
+
+    })
+};
+function confirmarDatosReport() {
+    Swal.fire({
+        title: 'reporte correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
+
+    })
+};
+
+function errorDatos(){
+    swal.fire({
+        title: 'Error en los datos',
+        text: 'por favor rellenar los campos correctamente',
+        confirmButtonText: 'listo',
+        icon: 'error'
+
+
+    }
+
+
+    )
+}

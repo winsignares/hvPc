@@ -19,6 +19,7 @@
   })
   .catch((err) => {
       console.log(err);
+      errorDatos()
   })
 }
 function prevenir() {
@@ -38,3 +39,16 @@ function confirmarDatos() {
 
   })
 };
+function errorDatos(){
+    swal.fire({
+        title: 'lo sentimos, su informacion es incorrecta',
+        text: 'por favor registrarse',
+        confirmButtonText: 'listo',
+        icon: 'warning'
+
+
+    }
+
+
+    )
+}
