@@ -1,7 +1,7 @@
 {% extends './layout.html' %}
 {% block body%}
 <div class="limiter">
-    <div class="container-login100">
+    <div class="container-login100" id="log">
         <div class="wrap-login100">
             <form class="login100-form validate-form">
                 <span class="login100-form-logo">
@@ -12,36 +12,40 @@
                     Registro
                 </span>
 
-                <div class="wrap-input100 validate-input" data-validate = "Enter Username">
+                <div class="wrap-input100 validate-input" >
                     <input id="nombreAdmin" class="input100" type="text" name="username" placeholder="Username">
                     <span class="focus-input100" data-placeholder="&#xf207;"></span> 
                 </div>
 
-                <div class="wrap-input100 validate-input direccion" data-validate = "Enter direccion">
+                <div class="wrap-input100 validate-input direccion">
                     <input id="direccionAdmin" class="input100" type="text" name="direccion" placeholder="Direccion">
                     <span class="focus-input100" data-placeholder="&#xf278;"></span> 
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate = "Enter Email">
+                <div class="wrap-input100 validate-input" >
                     <input id="emailAdmin" class="input100" type="text" name="Email" placeholder="Email">
                     <span class="focus-input100" data-placeholder="&#xf15a;"></span>
                 </div>
 
-                <div class="wrap-input100 validate-input" data-validate = "Enter telefono">
+                <div class="wrap-input100 validate-input">
                     <input id="telAdmin" class="input100" type="text" name="telefono" placeholder="telefono">
                     <span class="focus-input100" data-placeholder="&#xf2be;"></span>
                 </div>
 
 
-                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                <div class="wrap-input100 validate-input">
                     <input id="passAdmin" class="input100" type="password" name="pass" placeholder="Password">
                     <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
 
-                <p style="color: #fff">Sexo:
-                    <input id="generoAdmins" type="radio" name="hm" value="2" required> Hombre
-                    <input id="generoAdmin" type="radio" name="hm" value="1" required> Mujer
-                  </p>
+                <div class="col-md-12 mb-3">
+                    <label  class="form-label text-light">generos:</label>
+                    <select id="generos" class="form-select">
+                      <option selected>Choose...</option>
+                      <option value="1">hombre</option>
+                      <option value="2">mujer</option>
+                    </select>
+                  </div>
                   <br>
 
                 <div class="contact100-form-checkbox">
@@ -52,7 +56,7 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="login100-form-btn" onclick="guardaradmin()">
+                    <button class="login100-form-btn" onclick="prevenir();guardaradmin()">
                         Registrarse
                     </button>
                 </div>
@@ -71,4 +75,7 @@
 
 <div id="dropDownSelect1"></div>
 <script src="{{url_for('static', filename='js/hdvjs/registro.js')}}"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js
+"></script>
 {%endblock%}
