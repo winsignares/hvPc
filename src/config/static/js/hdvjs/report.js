@@ -1,4 +1,5 @@
 
+
 function guardar_cliente() {
     const name = document.getElementById('namecliente').value;
     const direccion = document.getElementById('direccioncliente').value;
@@ -24,11 +25,11 @@ function guardar_cliente() {
         }
     }).then((res) => {
         console.log(res.data)
-        alert("success")
+        confirmarDatosClientes()
     })
         .catch((error) => {
             console.error(error)
-            alert("no")
+            errorDatos()
         })
     console.log(generos)
 }
@@ -60,11 +61,11 @@ function guardar_pc() {
         }
     }).then((res) => {
         console.log(res.data)
-        alert("success")
+        confirmarDatosPc()
     })
         .catch((error) => {
             console.error(error)
-            alert("no")
+            errorDatos()
         })
     console.log(fecha)
 }
@@ -96,11 +97,11 @@ function guardar_reportes() {
         }
     }).then((res) => {
         console.log(res.data)
-        alert("success")
+        confirmarDatosReport()
     })
         .catch((error) => {
             console.error(error)
-            alert("no")
+           
         })
     console.log(fecha_fin)
 }
@@ -208,7 +209,9 @@ const h3= document.getElementById("nomClient")
        h3.innerText= data.full_name
     })
     .catch(error=>{
-        console.error("no salio como esperaba", error);
+        console.error(error)
+        ErrorDatosAdmin()
+
     })
 }  
 function mostrarDataClients(){
@@ -221,16 +224,116 @@ const direccions= document.getElementById("direcc")
 
     axios.get(`obtenerClients/${inputClients}`)
     .then(response=>{
-        const datos= response.data;
-       telefono.innerHTML= datos.telefono,
-       nombre_completo.innerText= datos.full_name,
-       tipo_documents.innerText= datos.tipo_document,
-       direccions.innerText= datos.direccion
+       const data= response.data;
+       telefono.innerText= data.telefono
+       nombre_completo.innerText= data.full_name
+       tipo_documents.innerText= data.tipo_document
+       direccions.innerText= data.direccion
 
     })
     .catch(error=>{
-        console.error("no salio como esperaba", error);
+        console.error(error);
+        ErrorDatosClientes()
     })
 }  
 
+function confirmarDatosClientes() {
+    Swal.fire({
+        title: 'Cliente correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
+
+    })
+};
+
+function confirmarDatosPc() {
+    Swal.fire({
+        title: 'Pc correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
+
+    })
+};
+
+function confirmarDatosReport() {
+    Swal.fire({
+        title: 'reporte correctamente registrado',
+        text: 'estos datos han sido correctamente registrados',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'success',
+        timer: 5000
+
+    })
+};
+
+function ErrorDatosAdmin() {
+    Swal.fire({
+        title: 'Error en la identificacion del administrador',
+        text: 'esta identificacion es desconocida, favor digite su identificacion correctamente',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'warning',
+        timer: 5000
+
+    })
+};
+
+
+function ErrorDatosClientes() {
+    Swal.fire({
+        title: 'Error en la identificacion del cliente',
+        text: 'esta identificacion es desconocida, favor digite su identificacion correctamente',
+        confirmButtonText: 'listo',
+      backdrop: true,
+        icon: 'warning',
+        timer: 5000
+
+    })
+};
+
+
+
+function errorDatos(){
+    swal.fire({
+        title: 'Error en los datos',
+        text: 'por favor rellenar los campos correctamente',
+        confirmButtonText: 'listo',
+        icon: 'error'
+
+
+    }
+
+
+    )
+}
+
+
+
+function genPDF() {
+    var doc = new jsPDF();
+  
+    // Obtener el contenido del contenedor a través de su identificador
+    var contenedor = document.getElementById('container-hvpc');
+    var opciones = {
+        margin: { top: 15, bottom: 15, left: 15, right: 15 },
+        autoPaging: true
+      };
+    // Convertir el contenedor a una imagen base64
+    html2canvas(contenedor,opciones).then(function(canvas) {
+      var imagenData = canvas.toDataURL('image/jpeg');
+  
+      // Agregar la imagen al PDF
+      doc.addImage(imagenData, 'JPEG', 20, 20, 250, 250);
+  
+      // Descargar el PDF con un nombre de archivo específico
+      doc.save('archivo.pdf');
+    });
+  }
 

@@ -192,7 +192,7 @@
           id="ok"
           type="submit"
           class="btn btn-primary d-inline-block mr-2"
-          onclick="guardar_reportes();prevenir();buscarAdmin();mostrarDataClients()"
+          onclick="guardar_reportes()"
         >
           Registrar
         </button>
@@ -202,20 +202,20 @@
           type="submit"
           class="btn btn-danger d-inline-block ml-2"
           id="ok"
-          onclick="limpiarReportes()"
+          onclick="prevenir();mostrarDataClients();buscarAdmin()"
         >
           Limpiar
         </button>
       </div>
     </form>
   </div>
-  <div class="container dos mb-5">
+  <div class="container dos mb-5" >
     <div class="row">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-6 offset-md-3" id="container-hvpc">
         <div class="header">
-          <h1>HDVPC</h1>
+          <h1 >HDVPC</h1>
         </div>
-        <div class="text-center">
+        <div  class="text-center">
           <img
             src="#"
             id="preview"
@@ -227,14 +227,15 @@
           <p>administrador</p>
           <hr />
         </div>
-         <div>
+        <div>
           <h4>Información del cliente</h4>
-          <ul>
-            <li id="tel"><strong>Teléfono:</strong> (123) 456-7890</li>
-            <li id="nom"><strong>Nombre completo:</strong> ejemplo@example.com</li>
-            <li id="documents"><strong>Tipo de documento:</strong> ejemplo@example.com</li>
-            <li id="direcc"><strong>Dirección:</strong> Ciudad, País</li>
-          </ul>
+
+          <h3 id="tel">Teléfono: (123) 456-7890</h3>
+          <h3 id="nom">
+            ejemplo@example.comNombre completo:ejemplo@example.com
+          </h3>
+          <h3 id="documents">ejemplo@example.com</h3>
+          <h3 id="direcc">Dirección</h3>
         </div>
         <div>
           <h4>Resumen Profesional</h4>
@@ -261,9 +262,14 @@
               <p>Fecha: Fecha de inicio - Fecha de finalización</p>
             </li>
           </ul>
-        </div>-->
+        </div>
         <div class="col-8 mx-auto d-flex justify-content-end bg-black">
-          <button id="ok" type="submit" class="btn btn-primary" onclick="">
+          <button
+            id="download"
+            type="submit"
+            class="btn btn-primary"
+            onclick="prevenir();genPDF()"
+          >
             Descargar
           </button>
         </div>
@@ -281,4 +287,5 @@
 </footer>
 
 <script src="{{url_for('static', filename='js/hdvjs/report.js')}}"></script>
+
 {%endblock%}

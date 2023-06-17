@@ -34,7 +34,7 @@ margin-top: 200px;
 .carousel-caption p{
 width: 60%;
 margin: auto;
-font-size: 18px;
+font-size: 14px;
 line-height: 1.9;
 
 }
@@ -141,17 +141,17 @@ padding: 100px 100px;
 .card.one {
   width: 70%;
   max-width: 350px;
-  border: none;
+border: none;
 }
 .card.two {
   width: 70%;
   max-width: 350px;
-  border: none;
+border: none;
 }
 .card.tree {
   width: 70%;
   max-width: 350px;
-  border: none;
+border: none;
 }
 
 .container.one{
@@ -178,6 +178,12 @@ width: 100%;
 position: fixed;
 z-index: -1;
   }
+
+
+.lead{
+
+ font-size: 16px; 
+}
 
 
 

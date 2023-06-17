@@ -23,9 +23,7 @@ def validar_inicio_sesion():
 
     # Verificar el inicio de sesión
     if usuario:
-       print("paso")
-       href = "/fronted/indexhome"
-    else:
-       href = "/fronted/indexlogin"
-    print("no")
-    return href
+        
+        print("paso")
+        href = "/fronted/indexhome"
+        return href
