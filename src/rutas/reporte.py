@@ -83,12 +83,13 @@ def obtener_clientes_id(id):
    
    if clientes is None:
        return jsonify({"error": 'id no encontrado'})
-   datos ={
+   data ={
        'full_name': clientes.full_name,
        'tipo_document': clientes.tipo_document,
        'telefono': clientes.telefono,
        'direccion': clientes.direccion
     }
+<<<<<<< HEAD
    return jsonify(datos)
 
 
@@ -108,6 +109,9 @@ def obtener_clientes_id(id):
 # return jsonify(data)
 
 
+=======
+   return jsonify(data)
+>>>>>>> 2d931d41f23045f1d78e263b390b38fb6c573e2c
            
        
        
