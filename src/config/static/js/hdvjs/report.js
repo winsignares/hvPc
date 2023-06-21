@@ -317,23 +317,13 @@ function errorDatos(){
 
 
 function genPDF() {
-    var doc = new jsPDF();
+    
   
     // Obtener el contenido del contenedor a través de su identificador
     var contenedor = document.getElementById('container-hvpc');
-    var opciones = {
-        margin: { top: 15, bottom: 15, left: 15, right: 15 },
-        autoPaging: true
-      };
-    // Convertir el contenedor a una imagen base64
-    html2canvas(contenedor,opciones).then(function(canvas) {
-      var imagenData = canvas.toDataURL('image/jpeg');
+    html2pdf()
+    .from(contenedor)
+    .save('reporte.pdf');
+}
   
-      // Agregar la imagen al PDF
-      doc.addImage(imagenData, 'JPEG', 20, 20, 250, 250);
-  
-      // Descargar el PDF con un nombre de archivo específico
-      doc.save('archivo.pdf');
-    });
-  }
 
