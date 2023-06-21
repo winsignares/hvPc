@@ -3,13 +3,6 @@ function validarlogin() {
   const nameuser = document.getElementById("emailuser").value;
   const passuser = document.getElementById("passuser").value;
 
-<<<<<<< HEAD
-  })
-  .catch((err) => {
-      console.log(err);
-      errorDatos()
-  })
-=======
   console.log("getData.Email:'", nameuser, "'.and.Password:'", passuser, "'");
 
   axios
@@ -30,7 +23,6 @@ function validarlogin() {
         console.log(err)
         ErrorDatosLogin()
     })
->>>>>>> 2d931d41f23045f1d78e263b390b38fb6c573e2c
 }
 function prevenir() {
   const login = document.getElementById("login");
@@ -56,21 +48,4 @@ function ErrorDatosLogin() {
     confirmButtonText: "listo",
     icon: "warning"
   })
-<<<<<<< HEAD
-};
-function errorDatos(){
-    swal.fire({
-        title: 'lo sentimos, su informacion es incorrecta',
-        text: 'por favor registrarse',
-        confirmButtonText: 'listo',
-        icon: 'warning'
-
-
-    }
-
-
-    )
 }
-=======
-}
->>>>>>> 2d931d41f23045f1d78e263b390b38fb6c573e2c
