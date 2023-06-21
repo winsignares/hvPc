@@ -61,16 +61,21 @@ def savereports():
 
 @routes_report.route('/obtenerNombre/<id>', methods=['GET'])
 def obtener_nombre_por_id(id):
-   reportes= admin.query.get(id)
    
-   if reportes is None:
-       return jsonify({"error": 'id no encontrado'})
-   data ={
-       'full_name': reportes.full_name
+    dato = report.query.filter_by(id_admin=id).first()
+
+    if dato:
+        relacion= admin.query.filter_by(id=dato.id_admin).first()
+       
     
-    
-       }
-   return jsonify(data)
+    if relacion:
+        return jsonify({'full_name': relacion.full_name})
+    else:
+        # Si no se encuentra el ID, devolver una respuesta vacía
+        return jsonify({})
+
+
+
 
 @routes_report.route('/obtenerClients/<id>', methods=['GET'])
 def obtener_clientes_id(id):

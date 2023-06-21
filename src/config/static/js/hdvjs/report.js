@@ -88,6 +88,7 @@ function guardar_reportes() {
         id_admin: admin,
         programas_install: programas,
         observaciones: observaciones,
+        
         estado: estado,
         fecha_inicio: fecha_ini,
         fecha_fin: fecha_fin
@@ -104,6 +105,7 @@ function guardar_reportes() {
            
         })
     console.log(fecha_fin)
+    
 }
 
 
@@ -179,23 +181,23 @@ function limpiarReportes() {
 
 
 }
-function mostrarImagen(event){
-var imagenSource= event.target.result;
-var previewImage= document.getElementById('preview');
-previewImage.src = imagenSource;
+function mostrarImagen(event) {
+    var imagenSource = event.target.result;
+    var previewImage = document.getElementById('preview');
+    previewImage.src = imagenSource;
 
 }
-function procesarArchivo(event){
-var imagen= event.target.files[0];
-var lector = new FileReader();
-lector.addEventListener('load', mostrarImagen, false)
-lector.readAsDataURL(imagen);
+function procesarArchivo(event) {
+    var imagen = event.target.files[0];
+    var lector = new FileReader();
+    lector.addEventListener('load', mostrarImagen, false)
+    lector.readAsDataURL(imagen);
 
 
 }
 
 document.getElementById("archivo")
- .addEventListener('change', procesarArchivo, false);
+    .addEventListener('change', procesarArchivo, false);
 
 
 
@@ -317,13 +319,21 @@ function errorDatos(){
 
 
 function genPDF() {
+<<<<<<< HEAD
     
   
+=======
+>>>>>>> fb65a85c6cfaa063cadbd7c8dafcf99783ff85ba
     // Obtener el contenido del contenedor a través de su identificador
     var contenedor = document.getElementById('container-hvpc');
     html2pdf()
     .from(contenedor)
     .save('reporte.pdf');
+<<<<<<< HEAD
 }
   
+=======
+  }
+>>>>>>> fb65a85c6cfaa063cadbd7c8dafcf99783ff85ba
 
+    

@@ -17,7 +17,6 @@ def validar_inicio_sesion():
     password =request.json['password']
     
 
-
     # Buscar el usuario en la base de datos
     usuario = admin.query.filter_by(email=email,password=password).first()
 
