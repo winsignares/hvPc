@@ -1,4 +1,5 @@
 import jwt
+import io
 from datetime import datetime, timedelta, timezone
 
 def generar_fecha_vencimiento(dias=0, horas=0, minutos=0, segundos=0):

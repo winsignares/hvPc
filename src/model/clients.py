@@ -4,7 +4,7 @@ class clients(db.Model):
     __tablename__ = "tbl_clients"
     
     
-    id= db.Column(db.Integer, primary_key= True)
+    id= db.Column(db.Integer, primary_key= True, autoincrement=False)
     full_name= db.Column(db.String(200))
     tipo_document= db.Column(db.String(200))
     telefono= db.Column(db.Integer)
@@ -12,7 +12,8 @@ class clients(db.Model):
     id_genero= db.Column(db.Integer, db.ForeignKey('tbl_generos.id'))
    
     
-    def __init__(self,full_name,tipo_document,telefono,direccion, id_genero):
+    def __init__(self,id,full_name,tipo_document,telefono,direccion, id_genero):
+        self.id= id
         self.full_name= full_name
         self.tipo_document= tipo_document
         self.telefono= telefono

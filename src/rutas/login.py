@@ -1,15 +1,12 @@
 from config.db import db, app, ma
-from flask import Blueprint,render_template,request,jsonify
+from flask import Blueprint,render_template,request,jsonify,session
 from model.admin import admin,adminSchema
+from common.token import *
 routes_login= Blueprint("routes_login",__name__)
 
 @routes_login.route("/indexlogin", methods= ["GET"])
 def indexregistro():
     return render_template("/main/login.html")
-
-@routes_login.route("/indexhome",methods= ["GET"])
-def indexhome():
-    return render_template("/main/home.html")
 
 @routes_login.route('/validarlogin', methods=['POST'])
 def validar_inicio_sesion():
@@ -22,7 +19,11 @@ def validar_inicio_sesion():
 
     # Verificar el inicio de sesión
     if usuario:
-        
+        usuario.generate_token()
+        db.session.commit()
         print("paso")
-        href = "/fronted/indexhome"
+        href="/fronted/indexhome"
         return href
+   
+    
+

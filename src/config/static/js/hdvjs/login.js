@@ -10,12 +10,20 @@ function validarlogin() {
       email: nameuser,
       password: passuser
       
-    }).then(function (res) {
+    }).then(function (response) {
         confirmarDatos()
-        console.log(res.data)
+        const data = response.data;
+        if (data.message === 'Tus credenciales han expirado') {
+            alert(data.message);
+        } else {
+            // Las credenciales son válidas, procesar el token, etc.
+            const token = data.token;
+            console.log(token);
+            localStorage.setItem('token', token); // Almacena el token en el local storage
+        console.log(response.data)}
         setTimeout(function(){
 
-        window.location.href = res.data
+        window.location.href = "/fronted/indexhome"
         },4000 )
         
     })
@@ -49,3 +57,5 @@ function ErrorDatosLogin() {
     icon: "warning"
   })
 }
+
+

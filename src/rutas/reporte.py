@@ -13,13 +13,14 @@ def indexregistro():
 
 @routes_report.route('/guardar_cliente', methods= ["POST"])
 def savecliente():
+    id= request.form['id']
     full_name = request.form['full_name'] 
     tipo_document = request.form['tipo_document']
     telefono = request.form['telefono']
     direccion = request.form['direccion']
     id_genero = request.form['id_genero']
     print(full_name)
-    new_client = clients(full_name,tipo_document,telefono,direccion,id_genero)
+    new_client = clients(id,full_name,tipo_document,telefono,direccion,id_genero)
     db.session.add(new_client)
     db.session.commit()
     return "ok"
@@ -44,6 +45,7 @@ def savepcs():
 
 @routes_report.route('/guardar_reports', methods= ["POST"])
 def savereports():
+    id= request.form['id']
     id_cliente= request.form['id_cliente'] 
     id_pc = request.form['id_pc']
     id_admin = request.form['id_admin']
@@ -53,7 +55,7 @@ def savereports():
     fecha_inicio = request.form['fecha_inicio']
     fecha_fin = request.form['fecha_fin']
     print(id_cliente)
-    new_reports = report(id_cliente,id_pc,id_admin,programas_install,observaciones,estado,fecha_inicio,fecha_fin)
+    new_reports = report(id,id_cliente,id_pc,id_admin,programas_install,observaciones,estado,fecha_inicio,fecha_fin)
     db.session.add(new_reports)
     db.session.commit()
     return "ok"
@@ -84,6 +86,7 @@ def obtener_clientes_id(id):
    if clientes is None:
        return jsonify({"error": 'id no encontrado'})
    data ={
+       'id': clientes.id,
        'full_name': clientes.full_name,
        'tipo_document': clientes.tipo_document,
        'telefono': clientes.telefono,
@@ -92,7 +95,41 @@ def obtener_clientes_id(id):
    return jsonify(data)
            
        
+@routes_report.route('/obtenerPcs/<id>', methods=['GET'])
+def obtener_pcs_id(id):
+   pcs= pc.query.get(id)
+   
+   if pcs is None:
+       return jsonify({"error": 'id no encontrado'})
+   data ={
        
+       'id': pcs.id,
+       'marca': pcs.marca,
+       'serie': pcs.serie,
+       'capacidad_Ram': pcs.capacidad_Ram,
+       'tarjeta_grafica': pcs.tarjeta_grafica,
+       'capacidad_discoDuro': pcs.capacidad_discoDuro,
+       'procesador': pcs.procesador,
+       'sistema_operativo': pcs.sistema_operativo,
+       'fecha_adquisicion': pcs.fecha_adquisicion
+    }
+   return jsonify(data)      
    
   
-  
+@routes_report.route('/obtenerReports/<id>', methods=['GET'])
+def obtener_reports_id(id):
+   reports= report.query.get(id)
+   
+   if reports is None:
+       return jsonify({"error": 'id no encontrado'})
+   data ={
+       
+       'observaciones': reports.observaciones,
+       'programas_install': reports.programas_install,
+
+       'estado': reports.estado,
+       'fecha_inicio': reports.fecha_inicio,
+       'fecha_fin': reports.fecha_fin
+    }
+   return jsonify(data)
+           
