@@ -11,21 +11,19 @@ background-color: #fff;
   body {
     background-color: #f4f4f4;
     font-family:Poppins-Regular, sans-serif; 
+    background: linear-gradient(to right, #ffffff 40%, #525252 60%)
   }
 
   .container.dos {
     background-color: #fff;
     margin-top: 100px;
-<<<<<<< HEAD
-   
-=======
     margin-bottom: 50px;
     padding: 30px;
->>>>>>> 3f215b48fab7c744a97e3b0921ce405b13e3b9ec
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-   
+    max-width: 800px;
+    max-height: 2000px;
+    
   }
 
   .header {
@@ -35,29 +33,16 @@ background-color: #fff;
     padding: 10px;
     border-radius: 5px 5px 0 0;
   }
-<<<<<<< HEAD
-
- h3{
-  font-size: medium;
- }
-=======
 h3{
 font-size: medium;
+
 }
->>>>>>> 3f215b48fab7c744a97e3b0921ce405b13e3b9ec
 
   img {
     margin-bottom: 20px;
   }
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  ul li {
-    margin-bottom: 10px;
-  }
+ 
 
   hr {
     border-color: #ccc;
@@ -98,11 +83,6 @@ font-size: medium;
   top: 0;
 }
 
-<<<<<<< HEAD
-.content{
-padding: 20px;
-
-=======
 hr {border: 0; height: 2px; border-top: 1px dashed black; border-bottom: 1px dashed black;}
 
 @font-face {
@@ -112,5 +92,9 @@ src: url('../assets/fonts/poppins/Poppins-Regular.ttf')
 
 h4{
  text-transform: uppercase ;
->>>>>>> 3f215b48fab7c744a97e3b0921ce405b13e3b9ec
+}
+
+
+h3 + p {
+  margin-top: 20px;
 }
