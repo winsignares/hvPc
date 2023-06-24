@@ -319,21 +319,11 @@ function errorDatos(){
 
 
 function genPDF() {
-<<<<<<< HEAD
-    
-  
-=======
->>>>>>> fb65a85c6cfaa063cadbd7c8dafcf99783ff85ba
     // Obtener el contenido del contenedor a través de su identificador
     var contenedor = document.getElementById('container-hvpc');
     html2pdf()
     .from(contenedor)
     .save('reporte.pdf');
-<<<<<<< HEAD
-}
-  
-=======
   }
->>>>>>> fb65a85c6cfaa063cadbd7c8dafcf99783ff85ba
 
     

@@ -13,9 +13,9 @@ def indexhome():
 
 @routes_login.route('/validarlogin', methods=['POST'])
 def validar_inicio_sesion():
-    email =request.json['email']
-    password =request.json['password']
-    
+    email = request.json['email']
+    password = request.json['password']
+    print(email)
 
     # Buscar el usuario en la base de datos
     usuario = admin.query.filter_by(email=email,password=password).first()

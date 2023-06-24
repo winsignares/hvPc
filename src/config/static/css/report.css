@@ -10,17 +10,17 @@ background-color: #fff;
 
   body {
     background-color: #f4f4f4;
-    font-family: Arial, sans-serif;
+    font-family:Poppins-Regular, sans-serif; 
   }
 
   .container.dos {
     background-color: #fff;
     margin-top: 100px;
-    padding: 30px;
+   
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 700px;
-    margin-right: 1px;
+   
   }
 
   .header {
@@ -31,9 +31,9 @@ background-color: #fff;
     border-radius: 5px 5px 0 0;
   }
 
-  h1, h3, h4, h5 {
-    color: #333;
-  }
+ h3{
+  font-size: medium;
+ }
 
   img {
     margin-bottom: 20px;
@@ -85,4 +85,9 @@ background-color: #fff;
   right: 0;
   text-align: right;
   top: 0;
+}
+
+.content{
+padding: 20px;
+
 }
