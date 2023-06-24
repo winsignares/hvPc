@@ -4,7 +4,7 @@ class report(db.Model):
     __tablename__ = "tbl_reports"
     
     
-    id= db.Column(db.Integer, primary_key= True)
+    id= db.Column(db.Integer, primary_key= True,  autoincrement=False)
     id_cliente= db.Column(db.Integer, db.ForeignKey("tbl_clients.id"))
     id_pc= db.Column(db.Integer, db.ForeignKey("tbl_pcs.id"))
     id_admin= db.Column(db.Integer, db.ForeignKey("tbl_admin.id"))
@@ -16,7 +16,8 @@ class report(db.Model):
     
     
     
-    def __init__(self,id_cliente,id_pc,id_admin,programas_install,observaciones,estado,fecha_inicio ,fecha_fin):
+    def __init__(self,id,id_cliente,id_pc,id_admin,programas_install,observaciones,estado,fecha_inicio ,fecha_fin):
+        self.id=id
         self.id_cliente= id_cliente 
         self.id_pc= id_pc
         self.id_admin= id_admin

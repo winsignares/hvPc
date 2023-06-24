@@ -1,6 +1,7 @@
 
 
 function guardar_cliente() {
+    const identificacion = document.getElementById('id').value;
     const name = document.getElementById('namecliente').value;
     const direccion = document.getElementById('direccioncliente').value;
     const telecliente = document.getElementById('telecliente').value;
@@ -12,6 +13,7 @@ function guardar_cliente() {
 
 
     axios.post('guardar_cliente', {
+        id: identificacion,
         full_name: name,
         tipo_document: tipodocumento,
         telefono: telecliente,
@@ -73,6 +75,7 @@ function guardar_pc() {
 
 function guardar_reportes() {
 
+    const idreport = document.getElementById('report').value;
     const clientes = document.getElementById('clientes').value;
     const pcs = document.getElementById('pcs').value;
     const admin = document.getElementById('admin').value;
@@ -83,12 +86,13 @@ function guardar_reportes() {
     const fecha_fin = document.getElementById('fechaend').value;
 
     axios.post('guardar_reports', {
+        id: idreport,
         id_cliente: clientes,
         id_pc: pcs,
         id_admin: admin,
         programas_install: programas,
         observaciones: observaciones,
-        
+
         estado: estado,
         fecha_inicio: fecha_ini,
         fecha_fin: fecha_fin
@@ -102,10 +106,10 @@ function guardar_reportes() {
     })
         .catch((error) => {
             console.error(error)
-           
+
         })
     console.log(fecha_fin)
-    
+
 }
 
 
@@ -201,50 +205,120 @@ document.getElementById("archivo")
 
 
 
-function buscarAdmin(){
-const inputAdmin= document.getElementById("admin").value;
-const h3= document.getElementById("nomClient")
+function buscarAdmin() {
+    const inputAdmin = document.getElementById("admin").value;
+    const h3 = document.getElementById("nomClient")
 
     axios.get(`obtenerNombre/${inputAdmin}`)
-    .then(response=>{
-        const data= response.data;
-       h3.innerText= data.full_name
-    })
-    .catch(error=>{
-        console.error(error)
-        ErrorDatosAdmin()
+        .then(response => {
+            const data = response.data;
+            h3.innerText = data.full_name
+        })
+        .catch(error => {
+            console.error(error)
+            ErrorDatosAdmin()
 
-    })
-}  
-function mostrarDataClients(){
-const inputClients= document.getElementById("clientes").value;
-const telefono= document.getElementById("tel")
-const nombre_completo= document.getElementById("nom")
-const tipo_documents= document.getElementById("documents")
-const direccions= document.getElementById("direcc")
+        })
+}
+function mostrarDataClients() {
 
+    const inputClients = document.getElementById("clientes").value;
+    const telefono = document.getElementById("tel")
+    const nombre_completo = document.getElementById("nom")
+    const tipo_documents = document.getElementById("documents")
+    const direccions = document.getElementById("direcc")
+    const identificacion = document.getElementById('ident')
 
     axios.get(`obtenerClients/${inputClients}`)
-    .then(response=>{
-       const data= response.data;
-       telefono.innerText= data.telefono
-       nombre_completo.innerText= data.full_name
-       tipo_documents.innerText= data.tipo_document
-       direccions.innerText= data.direccion
+        .then(response => {
+            const data = response.data;
+            identificacion.innerText = data.id
+            telefono.innerText = data.telefono
+            nombre_completo.innerText = data.full_name
+            tipo_documents.innerText = data.tipo_document
+            direccions.innerText = data.direccion
 
-    })
-    .catch(error=>{
-        console.error(error);
-        ErrorDatosClientes()
-    })
-}  
+        })
+        .catch(error => {
+            console.error(error);
+            ErrorDatosClientes()
+        })
+}
+
+
+
+function mostrarDataPcs() {
+
+    const inputPcs = document.getElementById("pcs").value;
+    const idpcs = document.getElementById("idpc")
+    const serie = document.getElementById("ser")
+    const marca = document.getElementById('marc');
+    const capaci_ram = document.getElementById('capaciram');
+    const tarjetagra = document.getElementById('targrafi');
+    const discod = document.getElementById('discd');
+    const procesador = document.getElementById('proc');
+    const sistema = document.getElementById('sistemo');
+    const fecha_adqui = document.getElementById('fecha_ad');
+
+    axios.get(`obtenerPcs/${inputPcs}`)
+        .then(response => {
+            const data = response.data;
+            idpcs.innerText = data.id
+            serie.innerText = data.serie
+            marca.innerText = data.marca
+            capaci_ram.innerText = data.capacidad_Ram
+            tarjetagra.innerText = data.tarjeta_grafica
+            discod.innerText = data.capacidad_discoDuro
+            procesador.innerText = data.procesador
+            sistema.innerText = data.sistema_operativo
+            fecha_adqui.innerText = data.fecha_adquisicion
+
+        })
+        .catch(error => {
+            console.error(error);
+            errorDatos()
+        })
+}
+
+
+
+function mostrarDataReports() {
+
+    const inputReports = document.getElementById("report").value;
+    const estado = document.getElementById("estatus")
+    const observaciones = document.getElementById("observations")
+    const programasinstall = document.getElementById("programasins")
+    const fechaini = document.getElementById("fechain")
+    const fechaf = document.getElementById('fechaf')
+
+    axios.get(`obtenerReports/${inputReports}`)
+        .then(response => {
+            const data = response.data;
+            estado.innerText = data.estado
+            observaciones.innerText = data.observaciones
+            programasinstall.innerText = data.programas_install
+            fechaini.innerText = data.fecha_inicio
+            fechaf.innerText = data.fecha_fin
+
+        })
+        .catch(error => {
+            console.error(error);
+            errorDatos()
+        })
+}
+
+
+
+
+
+
 
 function confirmarDatosClientes() {
     Swal.fire({
         title: 'Cliente correctamente registrado',
         text: 'estos datos han sido correctamente registrados',
         confirmButtonText: 'listo',
-      backdrop: true,
+        backdrop: true,
         icon: 'success',
         timer: 5000
 
@@ -256,7 +330,7 @@ function confirmarDatosPc() {
         title: 'Pc correctamente registrado',
         text: 'estos datos han sido correctamente registrados',
         confirmButtonText: 'listo',
-      backdrop: true,
+        backdrop: true,
         icon: 'success',
         timer: 5000
 
@@ -268,7 +342,7 @@ function confirmarDatosReport() {
         title: 'reporte correctamente registrado',
         text: 'estos datos han sido correctamente registrados',
         confirmButtonText: 'listo',
-      backdrop: true,
+        backdrop: true,
         icon: 'success',
         timer: 5000
 
@@ -280,7 +354,7 @@ function ErrorDatosAdmin() {
         title: 'Error en la identificacion del administrador',
         text: 'esta identificacion es desconocida, favor digite su identificacion correctamente',
         confirmButtonText: 'listo',
-      backdrop: true,
+        backdrop: true,
         icon: 'warning',
         timer: 5000
 
@@ -293,7 +367,7 @@ function ErrorDatosClientes() {
         title: 'Error en la identificacion del cliente',
         text: 'esta identificacion es desconocida, favor digite su identificacion correctamente',
         confirmButtonText: 'listo',
-      backdrop: true,
+        backdrop: true,
         icon: 'warning',
         timer: 5000
 
@@ -302,7 +376,7 @@ function ErrorDatosClientes() {
 
 
 
-function errorDatos(){
+function errorDatos() {
     swal.fire({
         title: 'Error en los datos',
         text: 'por favor rellenar los campos correctamente',
@@ -322,8 +396,13 @@ function genPDF() {
     // Obtener el contenido del contenedor a través de su identificador
     var contenedor = document.getElementById('container-hvpc');
     html2pdf()
-    .from(contenedor)
-    .save('reporte.pdf');
-  }
+        .from(contenedor)
+        .save('reporte.pdf');
+}
 
-    
+
+
+
+
+
+

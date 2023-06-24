@@ -4,15 +4,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
     <a href="#" class="navbar-brand"><span class="text-primary">hdv</span>pc</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarS"
-      aria-controls="navbarS"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+      aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarS">
@@ -46,6 +39,10 @@
         <input type="file" class="form-control" id="archivo" />
       </div>
       <div class="col-md-6">
+        <label class="form-label">Numero de identificacion:</label>
+        <input type="text" class="form-control" id="id" />
+      </div>
+      <div class="col-md-6">
         <label class="form-label">Nombre completo:</label>
         <input type="text" class="form-control" id="namecliente" />
       </div>
@@ -53,7 +50,7 @@
         <label class="form-label">Telefono:</label>
         <input type="number" class="form-control" id="telecliente" />
       </div>
-      <div class="col-12">
+      <div class="col-md-6">
         <label class="form-label">Direccion:</label>
         <input type="text" class="form-control" id="direccioncliente" />
       </div>
@@ -62,8 +59,8 @@
         <label class="form-label">Genero:</label>
         <select id="generos" class="form-select">
           <option selected>Choose...</option>
-          <option value="2">masculino</option>
-          <option value="1">femenino</option>
+          <option value="1">masculino</option>
+          <option value="2">femenino</option>
         </select>
       </div>
       <div class="col-md-6 mb-3">
@@ -76,22 +73,13 @@
       </div>
 
       <div class="col-md-3">
-        <button
-          type="submit"
-          class="btn btn-primary d-inline-block mr-3"
-          id="ok"
-          onclick="guardar_cliente();prevenir()"
-        >
+        <button type="submit" class="btn btn-primary d-inline-block mr-3" id="ok"
+          onclick="guardar_cliente();prevenir()">
           Registrar
         </button>
       </div>
       <div class="col-md-5 mb-5">
-        <button
-          type="submit"
-          class="btn btn-danger d-inline-block ml-2"
-          id="ok"
-          onclick="limpiarcliente()"
-        >
+        <button type="submit" class="btn btn-danger d-inline-block ml-2" id="ok" onclick="limpiarcliente()">
           Limpiar
         </button>
       </div>
@@ -131,26 +119,20 @@
       </div>
 
       <div class="col-md-3">
-        <button
-          id="ok"
-          type="submit"
-          class="btn btn-primary d-inline-block mr-2"
-          onclick="guardar_pc();prevenir()"
-        >
+        <button id="ok" type="submit" class="btn btn-primary d-inline-block mr-2" onclick="guardar_pc();prevenir()">
           Registrar
         </button>
       </div>
       <div class="col-md-5 mb-5">
-        <button
-          type="submit"
-          class="btn btn-danger d-inline-block ml-2"
-          id="ok"
-          onclick="limpiarpc()"
-        >
+        <button type="submit" class="btn btn-danger d-inline-block ml-2" id="ok" onclick="limpiarpc()">
           Limpiar
         </button>
       </div>
       <h1 class="text-uppercase lead">reporte</h1>
+      <div class="col-md-6">
+        <label class="form-label">Identificacion del reporte:</label>
+        <input type="text" class="form-control" id="report" />
+      </div>
       <div class="col-md-6">
         <label class="form-label">Identificacion del cliente:</label>
         <input type="text" class="form-control" id="clientes" />
@@ -159,6 +141,7 @@
         <label class="form-label">Identificacion del pc:</label>
         <input type="text" class="form-control" id="pcs" />
       </div>
+
       <div class="col-md-6">
         <label class="form-label">Identificacion del administrador:</label>
         <input type="text" class="form-control" id="admin" />
@@ -167,14 +150,20 @@
         <label class="form-label">estado:</label>
         <input type="text" class="form-control" id="estado" />
       </div>
-      <div class="col-md-6">
+      <div class="col-12">
         <label class="form-label">programas instalados:</label>
         <textarea id="programas" class="form-control" rows="3"></textarea>
+
       </div>
-      <div class="col-md-6">
+      <div class="col-12">
         <label class="form-label">Observaciones:</label>
+
         <textarea id="observaciones" class="form-control" rows="3"></textarea>
+
       </div>
+
+
+
 
       <div class="col-md-6">
         <label>Fecha de inicio:</label>
@@ -185,135 +174,218 @@
         <input type="date" class="form-control" id="fechaend" />
       </div>
       <div class="col-md-3">
-        <button
-          id="ok"
-          type="submit"
-          class="btn btn-primary d-inline-block mr-2"
-          onclick="guardar_reportes()"
-        >
+        <button id="ok" type="submit" class="btn btn-primary d-inline-block mr-2"
+          onclick="prevenir();guardar_reportes()">
           Registrar
         </button>
       </div>
       <div class="col-md-3">
-        <button
-          type="submit"
-          class="btn btn-danger d-inline-block ml-2"
-          id="ok"
-          onclick="prevenir();mostrarDataClients();buscarAdmin()"
-        >
+        <button type="submit" class="btn btn-danger d-inline-block ml-2" id="ok" onclick="limpiarReportes() ">
           Limpiar
+        </button>
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-success d-inline-block ml-2" id="mos"
+          onclick="prevenir();mostrarDataClients();buscarAdmin();mostrarDataPcs();mostrarDataReports()">
+          mostrar
         </button>
       </div>
     </form>
   </div>
-  <div class="container dos mb-5">
-    <div class="row" id="container-hvpc">
-      <div class="header mb-5">
-        <h1>HDVPC</h1>
-      </div>
-      <div class="text-center">
-        <img
-          src="#"
-          id="preview"
-          alt="Foto"
-          class="img-fluid rounded-circle"
-          style="width: 150px"
-        />
-        <h3 id="nomClient">carlos jose</h3>
-        <p>administrador</p>
-        <hr />
-      </div>
-      <div>
-        <h4 class="mb-3">Información del cliente</h4>
+  <div class="container dos">
+    <div class="row" >
+      <div id="container-hvpc">
+        <div class="header mb-5">
+          <h1>HDVPC</h1>
+        </div>
+        <div class="text-center mb-3">
 
-       
-        <h4>
-          Nombre completo:
-          <p>ejemplo</p>
-        </h4>
+          <h3 id="nomClient">carlos jose</h3>
+          <p>administrador</p>
+          <hr />
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="text-center mb-3">
+              <h4 class="mb-3 text-center"><strong>Información del cliente</strong></h4>
+            </div>
+            <div class="col-md-6 offset-md-3 text-center mb-3">
+              <img src="#" id="preview" alt="Foto" class="img-fluid rounded-circle" style="width: 150px" />
+            </div>
 
-        <h4 id="documents">
-          Tipo de documento:
-          <p>dfedfefefdf</p>
-        </h4>
-        <h4 class="mb-3" id="direcc">
-          Dirección:
-          <p>whdfeifhefihf</p>
-        </h4>
-      </div>
-      <div>
-        <h4 class="mb-3">Información del pc</h4>
+            <div class="col-md-6">
+              <h3><strong>
+                  Identificacion del usuario:
+                </strong>
+              </h3>
+              <p id="ident">whdfeifhefihf</p>
+            </div>
 
-        <h4>
-          marca:
-          <p>(123) 456-7890</p>
-        </h4>
-        <h4>
-          serie:
-          <p>ejemplo@example.com</p>
-        </h4>
-        <h4>
-          Capacidad ram:
-          <p>ejemplo</p>
-        </h4>
+            <div class="col-md-6">
+              <h3><strong>
+                  Nombre completo:
+                </strong>
+              </h3>
+              <p id="nom">ejemplo</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Tipo de documento:
+                </strong>
+              </h3>
+              <p id="documents">dfedfefefdf</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h3><strong>
+                  Dirección:
+                </strong>
+              </h3>
+              <p id="direcc">whdfeifhefihf</p>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h3><strong>
+                  Telefono:
+                </strong>
+              </h3>
+              <p id="tel">whdfeifhefihf</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="text-center mb-3">
+              <h4><strong>Información del pc</strong></h4>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Identificacion del pc :
 
-        <h4>
-          Tarjeta grafica:
-          <p>dfedfefefdf</p>
-        </h4>
-        <h4>
-          Disco duro:
-          <p>whdfeifhefihf</p>
-        </h4>
-        <h4>
-          Procesador:
-          <p>ejemplo</p>
-        </h4>
+                </strong></h3>
+              <p id="idpc">whdfeifhefihf</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  marca:
+                </strong>
+              </h3>
+              <p id="marc">(123) 456-7890</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  serie:
+                </strong>
+              </h3>
+              <p id="ser">ejemplo@example.com</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Capacidad ram:
+                </strong>
+              </h3>
+              <p id="capaciram">ejemplo</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Tarjeta grafica:
+                </strong>
+              </h3>
+              <p id="targrafi">dfedfefefdf</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Disco duro:
+                </strong>
+              </h3>
+              <p id="discd">whdfeifhefihf</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Procesador:
+                </strong>
+              </h3>
+              <p id="proc">ejemplo</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  Sistema operativo:
+                </strong>
+                <p id="sistemo">dfedfefefdf</p>
+              </h3>
+            </div>
+            <div class="col-md-6 mb-3">
+              <h3><strong>
+                  Fecha de adquisicion:
+                </strong>
+              </h3>
+              <p id="fecha_ad">whdfeifhefihf</p>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div class="container">
+          <div class="row">
+            <div class="text-center mb-3">
+              <h4><strong>Informe del reporte del pc</strong></h4>
+            </div>
 
-        <h4>
-          Sistema operativo:
-          <p>dfedfefefdf</p>
-        </h4>
-        <h4>
-          Fecha de adquisicion:
-          <p>whdfeifhefihf</p>
-        </h4>
+            <div class="col-md-6">
+              <h3><strong>
+                  Estado del pc:
+                </strong>
+              </h3>
+              <p id="estatus">whdfeifhefihf</p>
+            </div>
+
+
+
+            <div class="col-md-6">
+              <h3><strong>observaciones del pc</strong> </h3>
+
+
+              <p id="observations">Cargo: Descripción del cargo</p>
+
+
+
+            </div>
+            <div class="col-md-6">
+              <h3><strong>programas instalados</strong></h3>
+              <p id="programasins">Descripción del cargo</p>
+            </div>
+
+
+
+
+            <div class="col-md-6">
+              <h3><strong>
+                  fecha de inicio:
+                </strong>
+              </h3>
+              <p id="fechain">whdfeifhefihf</p>
+            </div>
+            <div class="col-md-6">
+              <h3><strong>
+                  fecha de fin:
+                </strong>
+              </h3>
+              <p id="fechaf">whdfeifhefihf</p>
+            </div>
+
+          </div>
+        </div>
       </div>
-      <div>
-        <h4></h4>
-        <ul>
-          <li><strong>Título Universitario:</strong> Universidad, Año</li>
-          <li><strong>Título Secundario:</strong> Escuela Secundaria, Año</li>
-        </ul>
-      </div>
-      <div>
-        <h4>Experiencia Laboral</h4>
-        <ul>
-          <li>
-            <h5>Empresa 1</h5>
-            <p>Cargo: Descripción del cargo</p>
-            <p>Fecha: Fecha de inicio - Fecha de finalización</p>
-          </li>
-          <li>
-            <h5>Empresa 2</h5>
-            <p>Cargo: Descripción del cargo</p>
-            <p>Fecha: Fecha de inicio - Fecha de finalización</p>
-          </li>
-        </ul>
-      </div>
-      <div class="col-8 mx-auto d-flex justify-content-end bg-black">
-        <button
-          id="download"
-          type="submit"
-          class="btn btn-primary"
-          onclick="prevenir();genPDF()"
-        >
+      <div class="d-flex justify-content-center" style="margin-top: 800px;">
+        <button id="download" type="submit" class="btn btn-primary" onclick="prevenir();genPDF()">
           Descargar
         </button>
       </div>
+
     </div>
+
   </div>
 </div>
+</div>
+
 
 <footer class="bg-dark p-2 text-center">
   <div class="container">

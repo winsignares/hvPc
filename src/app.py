@@ -11,6 +11,7 @@ from api.reports import route_reports
 
 
 #rutas
+from rutas.home import routes_home
 from rutas.login import routes_login
 from rutas.registro import routes_register
 from rutas.reporte import routes_report
@@ -25,6 +26,7 @@ app.register_blueprint(routes_genero, url_prefix="/api")
 
 #ubicacion de la ruta
 app.register_blueprint(routes_login, url_prefix="/fronted")
+app.register_blueprint(routes_home, url_prefix="/fronted")
 app.register_blueprint(routes_register, url_prefix="/fronted")
 app.register_blueprint(routes_report, url_prefix="/fronted")
 
