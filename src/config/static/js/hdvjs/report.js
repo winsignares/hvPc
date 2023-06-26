@@ -401,6 +401,26 @@ function genPDF() {
 
 
 
+    function showText(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          var textarea = document.getElementById("programas");
+          var text = textarea.value;
+          var lines = text.split('\n');
+          var output = document.getElementById("programasins");
+          var currentText = output.innerHTML;
+          var newText = lines.map(function(line) {
+            return "- " + line;
+          }).join("<br>");
+          output.innerHTML = currentText + newText + "<br>";
+          output.scrollTop = output.scrollHeight;
+        }
+        else {
+          var textarea = document.getElementById("programas");
+          var text = textarea.value;
+          document.getElementById("programasins").innerHTML = text;
+        }
+      }
 
 
 
