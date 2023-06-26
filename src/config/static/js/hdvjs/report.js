@@ -395,9 +395,7 @@ function errorDatos() {
 function genPDF() {
     // Obtener el contenido del contenedor a través de su identificador
     var contenedor = document.getElementById('container-hvpc');
-    html2pdf()
-        .from(contenedor)
-        .save('reporte.pdf');
+    html2pdf().from(contenedor).save('reporte.pdf');
 }
 
 

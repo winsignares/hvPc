@@ -10,20 +10,14 @@ function validarlogin() {
       email: nameuser,
       password: passuser
       
-    }).then(function (response) {
+    }).then(function (res) {
+      console.log(res.data)
         confirmarDatos()
-        const data = response.data;
-        if (data.message === 'Tus credenciales han expirado') {
-            alert(data.message);
-        } else {
-            // Las credenciales son válidas, procesar el token, etc.
-            const token = data.token;
-            console.log(token);
-            localStorage.setItem('token', token); // Almacena el token en el local storage
-        console.log(response.data)}
+        
         setTimeout(function(){
-
-        window.location.href = "/fronted/indexhome"
+          data = res.data  
+          window.location.href = res.data.href
+        window.location.href = res.data
         },4000 )
         
     })
